@@ -5,12 +5,12 @@ package com.memorytag.app.data.model
  * Correspond exactement à la réponse JSON de l'API.
  */
 data class Memory(
-    val id: String,
-    val title: String,
-    val location: String,
-    val latitude: Double,
-    val longitude: Double,
-    val photos: List<String>,
+    val id: String = "",
+    val title: String = "",
+    val location: String = "",
+    val latitude: Double = 0.0,
+    val longitude: Double = 0.0,
+    val photos: List<String> = emptyList(),
     val description: String? = null,
     val date: String? = null
 )

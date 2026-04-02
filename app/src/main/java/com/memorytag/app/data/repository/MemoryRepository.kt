@@ -1,29 +1,40 @@
 package com.memorytag.app.data.repository
 
 import com.memorytag.app.data.model.Memory
-import kotlinx.coroutines.delay
 import android.util.Log
+import com.google.firebase.firestore.FirebaseFirestore
+import kotlinx.coroutines.tasks.await
+
+
 /**
  * Repository des souvenirs.
  * Abstrait la source de données (API réelle ou mock).
  * En production : remplacer fetchMemory() par un appel Retrofit.
  */
-class MemoryRepository {
+class MemoryRepository(
+    private val firestore: FirebaseFirestore = FirebaseFirestore.getInstance()
+) {
 
     /**
      * Récupère un souvenir par son ID (lu depuis le tag NFC).
      * Simule un délai réseau de 800ms pour le mock.
      */
     suspend fun fetchMemory(memoryId: String): Memory {
-        delay(800) // Simule la latence réseau
-
         val normalizedId = memoryId.trim().uppercase()
         Log.d("MEMORY_DEBUG", "memoryId brut='$memoryId' | normalisé='$normalizedId'")
 
+        val snapshot = firestore
+            .collection("memories")
+            .document(normalizedId)
+            .get()
+            .await()
 
-        // --- MOCK DATA ---
+        return snapshot.toObject(Memory::class.java)
+            ?: throw IllegalArgumentException("Aucun souvenir trouvé pour l'id: '$normalizedId'")
+
+       /* // --- MOCK DATA ---
         // En production, remplacer par : apiService.getMemory(memoryId)
-        return getMockMemory(normalizedId)
+        return getMockMemory(normalizedId)*/
     }
 
     /**
