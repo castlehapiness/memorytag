@@ -1,0 +1,6 @@
+com.memorytag.app.test.app-annotation-experimental-1.3.0-0 /Users/dina/.gradle/caches/transforms-3/26e5df9d5c8be0de7f4f2a523325980b/transformed/annotation-experimental-1.3.0/res
+com.memorytag.app.test.app-core-1.5.0-1 /Users/dina/.gradle/caches/transforms-3/9a92a3b1345778f8c078d46c558c0bf9/transformed/core-1.5.0/res
+com.memorytag.app.test.app-androidTest-2 /Users/dina/Downloads/MemoryTag 2/app/build/generated/res/resValues/androidTest/debug
+com.memorytag.app.test.app-mergeDebugAndroidTestResources-3 /Users/dina/Downloads/MemoryTag 2/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/merged.dir
+com.memorytag.app.test.app-mergeDebugAndroidTestResources-4 /Users/dina/Downloads/MemoryTag 2/app/build/intermediates/incremental/debugAndroidTest/mergeDebugAndroidTestResources/stripped.dir
+com.memorytag.app.test.app-merged_res-5 /Users/dina/Downloads/MemoryTag 2/app/build/intermediates/merged_res/debugAndroidTest

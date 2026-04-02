@@ -1,111 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-    Layout principal du souvenir.
-    Design immersif : fond noir, photo plein-largeur,
-    galerie horizontale, globe, textes épurés.
--->
-<androidx.coordinatorlayout.widget.CoordinatorLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#080808">
+    android:background="#070707">
 
-    <!-- ═══════════════════════════════════════════
-         SCROLL PRINCIPAL
-         ═══════════════════════════════════════════ -->
+    <!-- SCROLL PRINCIPAL -->
     <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
-            android:id="@+id/contentContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:alpha="0">
+            android:orientation="vertical">
 
-            <!-- ═══════════════════════════════════════
-                 PHOTO PRINCIPALE — Plein largeur 4:3
-                 ═══════════════════════════════════════ -->
+            <!-- ── PHOTO PRINCIPALE ViewPager2 ── -->
             <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="460dp">
 
-                <ImageView
-                    android:id="@+id/mainPhotoImage"
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/photoPager"
                     android:layout_width="match_parent"
-                    android:layout_height="420dp"
-                    android:scaleType="centerCrop"
-                    android:background="#111111"/>
+                    android:layout_height="match_parent"/>
 
-                <!-- Dégradé bas de la photo pour lisibilité -->
+                <!-- Dégradé bas fort pour transition douce -->
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="120dp"
+                    android:layout_height="220dp"
                     android:layout_gravity="bottom"
                     android:background="@drawable/gradient_photo_bottom"/>
 
+                <!-- Indicateur de position "1 / 5" -->
+                <TextView
+                    android:id="@+id/photoIndicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|end"
+                    android:layout_margin="20dp"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="4dp"
+                    android:background="@drawable/bg_indicator"
+                    android:textColor="#FFFFFF"
+                    android:textSize="11sp"
+                    android:fontFamily="sans-serif-medium"
+                    android:letterSpacing="0.05"
+                    android:visibility="gone"/>
             </FrameLayout>
 
-            <!-- ═══════════════════════════════════════
-                 GALERIE MINIATURES (RecyclerView horizontal)
-                 ═══════════════════════════════════════ -->
+            <!-- ── THUMBNAILS GALERIE ── -->
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/galleryRecyclerView"
+                android:id="@+id/thumbnailRecycler"
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_marginTop="16dp"
+                android:layout_height="88dp"
+                android:layout_marginTop="14dp"
                 android:paddingStart="20dp"
                 android:paddingEnd="20dp"
                 android:clipToPadding="false"
                 android:orientation="horizontal"
                 android:scrollbars="none"/>
 
-            <!-- ═══════════════════════════════════════
-                 INFOS : TITRE + LOCALISATION + DATE
-                 ═══════════════════════════════════════ -->
+            <!-- ── TEXTES ── -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:paddingHorizontal="24dp"
-                android:paddingTop="28dp">
+                android:paddingHorizontal="28dp"
+                android:paddingTop="32dp"
+                android:paddingBottom="8dp">
 
-                <!-- Titre principal -->
+                <!-- Titre -->
                 <TextView
                     android:id="@+id/titleText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="#FFFFFF"
-                    android:textSize="28sp"
-                    android:fontFamily="sans-serif"
+                    android:textColor="#F2F2F2"
+                    android:textSize="30sp"
+                    android:fontFamily="sans-serif-medium"
                     android:letterSpacing="-0.02"
                     android:lineSpacingMultiplier="1.1"/>
 
-                <!-- Localisation avec icône pin -->
+                <!-- Localisation + icône -->
                 <LinearLayout
+                    android:id="@+id/locationRow"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:layout_marginTop="8dp"
+                    android:layout_marginTop="10dp"
                     android:gravity="center_vertical">
 
                     <ImageView
-                        android:layout_width="14dp"
-                        android:layout_height="14dp"
+                        android:layout_width="13dp"
+                        android:layout_height="13dp"
                         android:src="@drawable/ic_location_pin"
-                        android:tint="#FF3B30"/>
+                        android:tint="#FF453A"/>
 
                     <TextView
                         android:id="@+id/locationText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="6dp"
-                        android:textColor="#FF3B30"
-                        android:textSize="14sp"
+                        android:textColor="#FF453A"
+                        android:textSize="13sp"
                         android:fontFamily="sans-serif-medium"
-                        android:letterSpacing="0.05"/>
+                        android:letterSpacing="0.04"/>
                 </LinearLayout>
 
                 <!-- Date -->
@@ -113,109 +119,104 @@
                     android:id="@+id/dateText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:textColor="#555555"
-                    android:textSize="13sp"
-                    android:fontFamily="sans-serif"/>
+                    android:layout_marginTop="5dp"
+                    android:textColor="#3A3A3A"
+                    android:textSize="12sp"
+                    android:letterSpacing="0.06"/>
 
                 <!-- Description -->
                 <TextView
                     android:id="@+id/descriptionText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:textColor="#AAAAAA"
+                    android:layout_marginTop="20dp"
+                    android:textColor="#888888"
                     android:textSize="15sp"
-                    android:fontFamily="sans-serif"
-                    android:lineSpacingMultiplier="1.5"/>
+                    android:lineSpacingMultiplier="1.65"/>
 
             </LinearLayout>
 
-            <!-- ═══════════════════════════════════════
-                 SÉPARATEUR SUBTIL
-                 ═══════════════════════════════════════ -->
+            <!-- Séparateur -->
             <View
+                android:id="@+id/divider"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginHorizontal="24dp"
-                android:layout_marginTop="32dp"
-                android:background="#1AFFFFFF"/>
+                android:layout_marginHorizontal="28dp"
+                android:layout_marginTop="30dp"
+                android:background="#161616"/>
 
-            <!-- ═══════════════════════════════════════
-                 GLOBE SECTION
-                 ═══════════════════════════════════════ -->
+            <!-- ── SECTION GLOBE ── -->
             <LinearLayout
+                android:id="@+id/globeSection"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:gravity="center"
-                android:paddingTop="32dp"
-                android:paddingBottom="60dp">
+                android:paddingTop="36dp"
+                android:paddingBottom="72dp">
 
-                <!-- Label section -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="LOCALISATION"
-                    android:textColor="#404040"
+                    android:textColor="#2C2C2C"
                     android:textSize="10sp"
-                    android:letterSpacing="0.15"
+                    android:letterSpacing="0.18"
                     android:fontFamily="sans-serif-medium"
-                    android:layout_marginBottom="24dp"/>
+                    android:layout_marginBottom="28dp"/>
 
-                <!-- Globe custom view -->
                 <com.memorytag.app.ui.view.GlobeView
                     android:id="@+id/globeView"
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"/>
+                    android:layout_width="180dp"
+                    android:layout_height="180dp"/>
 
-                <!-- Nom de ville sous le globe -->
                 <TextView
+                    android:id="@+id/globeLocationLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/globeLocationLabel"
-                    android:layout_marginTop="20dp"
-                    android:textColor="#FFFFFF"
-                    android:textSize="16sp"
+                    android:layout_marginTop="18dp"
+                    android:textColor="#CCCCCC"
+                    android:textSize="15sp"
                     android:fontFamily="sans-serif-medium"
-                    android:letterSpacing="0.03"/>
+                    android:letterSpacing="0.02"/>
 
             </LinearLayout>
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
-    <!-- ═══════════════════════════════════════════
-         BOUTON RETOUR — flottant en haut à gauche
-         ═══════════════════════════════════════════ -->
+    <!-- BOUTON RETOUR flottant -->
     <ImageButton
         android:id="@+id/backButton"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_margin="20dp"
-        android:padding="8dp"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_margin="52dp"
+        android:padding="10dp"
         android:background="@drawable/bg_button_back"
         android:src="@drawable/ic_arrow_back"
         android:tint="#FFFFFF"
-        android:contentDescription="Retour"/>
+        android:contentDescription="Retour"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
-    <!-- ═══════════════════════════════════════════
-         OVERLAY DE CHARGEMENT
-         ═══════════════════════════════════════════ -->
+    <!-- OVERLAY LOADING -->
     <FrameLayout
         android:id="@+id/loadingView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#CC080808"
+        android:background="#CC070707"
         android:visibility="gone"
-        android:gravity="center">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <ProgressBar
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
             android:layout_gravity="center"
             android:indeterminate="true"
             android:indeterminateTint="#FFFFFF"/>
     </FrameLayout>
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

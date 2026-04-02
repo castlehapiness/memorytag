@@ -6,15 +6,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
+import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import androidx.viewpager2.widget.ViewPager2;
 import com.memorytag.app.R;
 import com.memorytag.app.ui.view.GlobeView;
 import java.lang.NullPointerException;
@@ -23,13 +24,10 @@ import java.lang.String;
 
 public final class ActivityMemoryDetailBinding implements ViewBinding {
   @NonNull
-  private final CoordinatorLayout rootView;
+  private final ConstraintLayout rootView;
 
   @NonNull
   public final ImageButton backButton;
-
-  @NonNull
-  public final LinearLayout contentContainer;
 
   @NonNull
   public final TextView dateText;
@@ -38,10 +36,13 @@ public final class ActivityMemoryDetailBinding implements ViewBinding {
   public final TextView descriptionText;
 
   @NonNull
-  public final RecyclerView galleryRecyclerView;
+  public final View divider;
 
   @NonNull
   public final TextView globeLocationLabel;
+
+  @NonNull
+  public final LinearLayout globeSection;
 
   @NonNull
   public final GlobeView globeView;
@@ -50,38 +51,56 @@ public final class ActivityMemoryDetailBinding implements ViewBinding {
   public final FrameLayout loadingView;
 
   @NonNull
+  public final LinearLayout locationRow;
+
+  @NonNull
   public final TextView locationText;
 
   @NonNull
-  public final ImageView mainPhotoImage;
+  public final TextView photoIndicator;
+
+  @NonNull
+  public final ViewPager2 photoPager;
+
+  @NonNull
+  public final NestedScrollView scrollView;
+
+  @NonNull
+  public final RecyclerView thumbnailRecycler;
 
   @NonNull
   public final TextView titleText;
 
-  private ActivityMemoryDetailBinding(@NonNull CoordinatorLayout rootView,
-      @NonNull ImageButton backButton, @NonNull LinearLayout contentContainer,
-      @NonNull TextView dateText, @NonNull TextView descriptionText,
-      @NonNull RecyclerView galleryRecyclerView, @NonNull TextView globeLocationLabel,
+  private ActivityMemoryDetailBinding(@NonNull ConstraintLayout rootView,
+      @NonNull ImageButton backButton, @NonNull TextView dateText,
+      @NonNull TextView descriptionText, @NonNull View divider,
+      @NonNull TextView globeLocationLabel, @NonNull LinearLayout globeSection,
       @NonNull GlobeView globeView, @NonNull FrameLayout loadingView,
-      @NonNull TextView locationText, @NonNull ImageView mainPhotoImage,
+      @NonNull LinearLayout locationRow, @NonNull TextView locationText,
+      @NonNull TextView photoIndicator, @NonNull ViewPager2 photoPager,
+      @NonNull NestedScrollView scrollView, @NonNull RecyclerView thumbnailRecycler,
       @NonNull TextView titleText) {
     this.rootView = rootView;
     this.backButton = backButton;
-    this.contentContainer = contentContainer;
     this.dateText = dateText;
     this.descriptionText = descriptionText;
-    this.galleryRecyclerView = galleryRecyclerView;
+    this.divider = divider;
     this.globeLocationLabel = globeLocationLabel;
+    this.globeSection = globeSection;
     this.globeView = globeView;
     this.loadingView = loadingView;
+    this.locationRow = locationRow;
     this.locationText = locationText;
-    this.mainPhotoImage = mainPhotoImage;
+    this.photoIndicator = photoIndicator;
+    this.photoPager = photoPager;
+    this.scrollView = scrollView;
+    this.thumbnailRecycler = thumbnailRecycler;
     this.titleText = titleText;
   }
 
   @Override
   @NonNull
-  public CoordinatorLayout getRoot() {
+  public ConstraintLayout getRoot() {
     return rootView;
   }
 
@@ -112,12 +131,6 @@ public final class ActivityMemoryDetailBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.contentContainer;
-      LinearLayout contentContainer = ViewBindings.findChildViewById(rootView, id);
-      if (contentContainer == null) {
-        break missingId;
-      }
-
       id = R.id.dateText;
       TextView dateText = ViewBindings.findChildViewById(rootView, id);
       if (dateText == null) {
@@ -130,15 +143,21 @@ public final class ActivityMemoryDetailBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.galleryRecyclerView;
-      RecyclerView galleryRecyclerView = ViewBindings.findChildViewById(rootView, id);
-      if (galleryRecyclerView == null) {
+      id = R.id.divider;
+      View divider = ViewBindings.findChildViewById(rootView, id);
+      if (divider == null) {
         break missingId;
       }
 
       id = R.id.globeLocationLabel;
       TextView globeLocationLabel = ViewBindings.findChildViewById(rootView, id);
       if (globeLocationLabel == null) {
+        break missingId;
+      }
+
+      id = R.id.globeSection;
+      LinearLayout globeSection = ViewBindings.findChildViewById(rootView, id);
+      if (globeSection == null) {
         break missingId;
       }
 
@@ -154,15 +173,39 @@ public final class ActivityMemoryDetailBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.locationRow;
+      LinearLayout locationRow = ViewBindings.findChildViewById(rootView, id);
+      if (locationRow == null) {
+        break missingId;
+      }
+
       id = R.id.locationText;
       TextView locationText = ViewBindings.findChildViewById(rootView, id);
       if (locationText == null) {
         break missingId;
       }
 
-      id = R.id.mainPhotoImage;
-      ImageView mainPhotoImage = ViewBindings.findChildViewById(rootView, id);
-      if (mainPhotoImage == null) {
+      id = R.id.photoIndicator;
+      TextView photoIndicator = ViewBindings.findChildViewById(rootView, id);
+      if (photoIndicator == null) {
+        break missingId;
+      }
+
+      id = R.id.photoPager;
+      ViewPager2 photoPager = ViewBindings.findChildViewById(rootView, id);
+      if (photoPager == null) {
+        break missingId;
+      }
+
+      id = R.id.scrollView;
+      NestedScrollView scrollView = ViewBindings.findChildViewById(rootView, id);
+      if (scrollView == null) {
+        break missingId;
+      }
+
+      id = R.id.thumbnailRecycler;
+      RecyclerView thumbnailRecycler = ViewBindings.findChildViewById(rootView, id);
+      if (thumbnailRecycler == null) {
         break missingId;
       }
 
@@ -172,9 +215,10 @@ public final class ActivityMemoryDetailBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMemoryDetailBinding((CoordinatorLayout) rootView, backButton,
-          contentContainer, dateText, descriptionText, galleryRecyclerView, globeLocationLabel,
-          globeView, loadingView, locationText, mainPhotoImage, titleText);
+      return new ActivityMemoryDetailBinding((ConstraintLayout) rootView, backButton, dateText,
+          descriptionText, divider, globeLocationLabel, globeSection, globeView, loadingView,
+          locationRow, locationText, photoIndicator, photoPager, scrollView, thumbnailRecycler,
+          titleText);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

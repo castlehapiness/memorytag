@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.memorytag.app-mergeDebugResources-33:/values-el/values-el.xml",
+            "outputFile": "com.memorytag.app-mergeDebugResources-36:/values-el/values-el.xml",
             "map": [
                 {
                     "source": "/Users/dina/.gradle/caches/transforms-3/808f25e33273cf777e1c687f415f5885/transformed/core-1.12.0/res/values-el/values-el.xml",

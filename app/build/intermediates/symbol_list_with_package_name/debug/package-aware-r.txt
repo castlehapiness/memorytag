@@ -43,8 +43,6 @@ anim m3_side_sheet_exit_to_right
 anim mtrl_bottom_sheet_slide_in
 anim mtrl_bottom_sheet_slide_out
 anim mtrl_card_lowers_interpolator
-anim pulse_scale
-anim pulse_scale_delayed
 animator design_appbar_state_list_animator
 animator design_fab_hide_motion_spec
 animator design_fab_show_motion_spec
@@ -2976,6 +2974,8 @@ drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
 drawable bg_button_back
+drawable bg_indicator
+drawable border_selected_thumb
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -3086,6 +3086,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable ring_pulse
 drawable ripple_circle_mid
 drawable ripple_circle_outer
 drawable test_level_drawable
@@ -3218,7 +3219,6 @@ id confirm_button
 id constraint
 id container
 id content
-id contentContainer
 id contentPanel
 id contiguous
 id continuousVelocity
@@ -3253,6 +3253,7 @@ id disableIntraAutoTransition
 id disablePostScroll
 id disableScroll
 id disjoint
+id divider
 id dragAnticlockwise
 id dragClockwise
 id dragDown
@@ -3296,11 +3297,11 @@ id forever
 id fragment_container_view_tag
 id frost
 id fullscreen_header
-id galleryRecyclerView
 id ghost_view
 id ghost_view_holder
 id glide_custom_view_target_tag
 id globeLocationLabel
+id globeSection
 id globeView
 id gone
 id graph
@@ -3344,9 +3345,9 @@ id listMode
 id list_item
 id loadingGroup
 id loadingView
+id locationRow
 id locationText
 id m3_side_sheet
-id mainPhotoImage
 id marquee
 id masked
 id match_constraint
@@ -3416,7 +3417,7 @@ id navigation_header_container
 id never
 id neverCompleteToEnd
 id neverCompleteToStart
-id nfcRippleView
+id nfcIconContainer
 id nfcStatusText
 id noScroll
 id noState
@@ -3457,6 +3458,9 @@ id path
 id pathRelative
 id peekHeight
 id percent
+id photoImage
+id photoIndicator
+id photoPager
 id pin
 id position
 id postLayout
@@ -3472,6 +3476,9 @@ id right
 id rightToLeft
 id right_icon
 id right_side
+id ring1
+id ring2
+id ring3
 id rounded
 id row_index_key
 id save_non_transition_alpha
@@ -3496,7 +3503,7 @@ id search_src_text
 id search_voice_btn
 id select_dialog_listview
 id selected
-id selectionIndicator
+id selectionBorder
 id selection_type
 id sharedValueSet
 id sharedValueUnset
@@ -3566,7 +3573,8 @@ id textinput_helper_text
 id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
-id thumbnailImage
+id thumbImage
+id thumbnailRecycler
 id time
 id title
 id titleDividerNoCustom
@@ -3741,7 +3749,8 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
-layout item_photo_thumbnail
+layout item_photo_pager
+layout item_thumbnail
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title

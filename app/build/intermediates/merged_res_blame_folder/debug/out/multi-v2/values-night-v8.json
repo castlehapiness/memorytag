@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.memorytag.app-mergeDebugResources-33:/values-night-v8/values-night-v8.xml",
+            "outputFile": "com.memorytag.app-mergeDebugResources-36:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
                     "source": "/Users/dina/.gradle/caches/transforms-3/8891375a1bc91bb710ffef89177105ad/transformed/appcompat-1.6.1/res/values-night-v8/values-night-v8.xml",

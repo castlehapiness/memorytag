@@ -34,22 +34,35 @@ public final class ActivityMainBinding implements ViewBinding {
   public final LinearLayout loadingGroup;
 
   @NonNull
-  public final FrameLayout nfcRippleView;
+  public final FrameLayout nfcIconContainer;
 
   @NonNull
   public final TextView nfcStatusText;
 
+  @NonNull
+  public final View ring1;
+
+  @NonNull
+  public final View ring2;
+
+  @NonNull
+  public final View ring3;
+
   private ActivityMainBinding(@NonNull ConstraintLayout rootView, @NonNull TextView debugButton,
       @NonNull TextView errorText, @NonNull LinearLayout idleGroup,
-      @NonNull LinearLayout loadingGroup, @NonNull FrameLayout nfcRippleView,
-      @NonNull TextView nfcStatusText) {
+      @NonNull LinearLayout loadingGroup, @NonNull FrameLayout nfcIconContainer,
+      @NonNull TextView nfcStatusText, @NonNull View ring1, @NonNull View ring2,
+      @NonNull View ring3) {
     this.rootView = rootView;
     this.debugButton = debugButton;
     this.errorText = errorText;
     this.idleGroup = idleGroup;
     this.loadingGroup = loadingGroup;
-    this.nfcRippleView = nfcRippleView;
+    this.nfcIconContainer = nfcIconContainer;
     this.nfcStatusText = nfcStatusText;
+    this.ring1 = ring1;
+    this.ring2 = ring2;
+    this.ring3 = ring3;
   }
 
   @Override
@@ -103,9 +116,9 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.nfcRippleView;
-      FrameLayout nfcRippleView = ViewBindings.findChildViewById(rootView, id);
-      if (nfcRippleView == null) {
+      id = R.id.nfcIconContainer;
+      FrameLayout nfcIconContainer = ViewBindings.findChildViewById(rootView, id);
+      if (nfcIconContainer == null) {
         break missingId;
       }
 
@@ -115,8 +128,26 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.ring1;
+      View ring1 = ViewBindings.findChildViewById(rootView, id);
+      if (ring1 == null) {
+        break missingId;
+      }
+
+      id = R.id.ring2;
+      View ring2 = ViewBindings.findChildViewById(rootView, id);
+      if (ring2 == null) {
+        break missingId;
+      }
+
+      id = R.id.ring3;
+      View ring3 = ViewBindings.findChildViewById(rootView, id);
+      if (ring3 == null) {
+        break missingId;
+      }
+
       return new ActivityMainBinding((ConstraintLayout) rootView, debugButton, errorText, idleGroup,
-          loadingGroup, nfcRippleView, nfcStatusText);
+          loadingGroup, nfcIconContainer, nfcStatusText, ring1, ring2, ring3);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

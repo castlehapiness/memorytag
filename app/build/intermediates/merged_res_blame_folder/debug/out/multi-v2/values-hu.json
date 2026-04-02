@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.memorytag.app-mergeDebugResources-33:/values-hu/values-hu.xml",
+            "outputFile": "com.memorytag.app-mergeDebugResources-36:/values-hu/values-hu.xml",
             "map": [
                 {
                     "source": "/Users/dina/.gradle/caches/transforms-3/808f25e33273cf777e1c687f415f5885/transformed/core-1.12.0/res/values-hu/values-hu.xml",

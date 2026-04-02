@@ -9,26 +9,15 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
+import androidx.viewpager2.widget.ViewPager2
 import com.memorytag.app.data.model.Memory
 import com.memorytag.app.data.model.MemoryUiState
 import com.memorytag.app.databinding.ActivityMemoryDetailBinding
-import com.memorytag.app.ui.adapter.PhotoGalleryAdapter
+import com.memorytag.app.ui.adapter.PhotoPagerAdapter
+import com.memorytag.app.ui.adapter.ThumbnailAdapter
 import com.memorytag.app.ui.viewmodel.MemoryViewModel
 import kotlinx.coroutines.launch
 
-/**
- * Écran immersif d'affichage d'un souvenir.
- *
- * Contient :
- * - Grande photo principale (plein largeur) avec swipe ViewPager2
- * - Galerie horizontale miniatures (RecyclerView)
- * - Globe custom centré sur la localisation
- * - Nom de ville + titre + description
- *
- * L'animation fade-in global est définie dans le thème (windowEnterTransition).
- */
 class MemoryDetailActivity : AppCompatActivity() {
 
     companion object {
@@ -37,42 +26,69 @@ class MemoryDetailActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMemoryDetailBinding
     private val viewModel: MemoryViewModel by viewModels()
-    private lateinit var galleryAdapter: PhotoGalleryAdapter
+
+    private lateinit var photoPagerAdapter: PhotoPagerAdapter
+    private lateinit var thumbnailAdapter: ThumbnailAdapter
+
+    // Évite les boucles infinie entre ViewPager ↔ RecyclerView
+    private var isSyncingSelection = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        // Plein écran immersif — contenu derrière la status bar
         window.setFlags(
             WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
             WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
         )
-
         binding = ActivityMemoryDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setupGallery()
+        setupViewPager()
+        setupThumbnails()
         observeViewModel()
 
-        // Charge le souvenir via son ID passé en extra
         val memoryId = intent.getStringExtra(EXTRA_MEMORY_ID) ?: "PARIS_001"
         viewModel.loadMemory(memoryId)
 
-        // Bouton retour
-        binding.backButton.setOnClickListener { finish() }
+        binding.backButton.setOnClickListener {
+            finish()
+            overridePendingTransition(0, android.R.anim.fade_out)
+        }
     }
 
-    // ─── Setup RecyclerView galerie ──────────────────────────────────────────
+    // ── ViewPager2 : swipe entre les photos ──────────────────────────────────
 
-    private fun setupGallery() {
-        galleryAdapter = PhotoGalleryAdapter { position ->
-            // Tap sur une miniature → change la photo principale
-            showMainPhoto(galleryAdapter.getPhotoAt(position))
-            galleryAdapter.setSelectedPosition(position)
+    private fun setupViewPager() {
+        photoPagerAdapter = PhotoPagerAdapter()
+        binding.photoPager.adapter = photoPagerAdapter
+        binding.photoPager.offscreenPageLimit = 2
+
+        // Sync ViewPager → Thumbnails
+        binding.photoPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+            override fun onPageSelected(position: Int) {
+                if (!isSyncingSelection) {
+                    isSyncingSelection = true
+                    thumbnailAdapter.setSelected(position)
+                    binding.thumbnailRecycler.smoothScrollToPosition(position)
+                    isSyncingSelection = false
+                }
+                // Indicateur de position
+                binding.photoIndicator.text = "${position + 1} / ${photoPagerAdapter.itemCount}"
+            }
+        })
+    }
+
+    // ── RecyclerView horizontal thumbnails ───────────────────────────────────
+
+    private fun setupThumbnails() {
+        thumbnailAdapter = ThumbnailAdapter { position ->
+            if (!isSyncingSelection) {
+                isSyncingSelection = true
+                binding.photoPager.setCurrentItem(position, true)
+                isSyncingSelection = false
+            }
         }
-
-        binding.galleryRecyclerView.apply {
-            adapter = galleryAdapter
+        binding.thumbnailRecycler.apply {
+            adapter = thumbnailAdapter
             layoutManager = LinearLayoutManager(
                 this@MemoryDetailActivity,
                 LinearLayoutManager.HORIZONTAL,
@@ -82,23 +98,16 @@ class MemoryDetailActivity : AppCompatActivity() {
         }
     }
 
-    // ─── Observation du ViewModel ────────────────────────────────────────────
+    // ── ViewModel observation ────────────────────────────────────────────────
 
     private fun observeViewModel() {
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.uiState.collect { state ->
                     when (state) {
-                        is MemoryUiState.Loading -> showLoading(true)
-                        is MemoryUiState.Success -> {
-                            showLoading(false)
-                            populateUI(state.memory)
-                        }
-                        is MemoryUiState.Error -> {
-                            showLoading(false)
-                            // Affiche l'erreur (simplifié)
-                            binding.titleText.text = state.message
-                        }
+                        is MemoryUiState.Loading -> setLoading(true)
+                        is MemoryUiState.Success -> { setLoading(false); populateUI(state.memory) }
+                        is MemoryUiState.Error   -> { setLoading(false); binding.titleText.text = state.message }
                         else -> {}
                     }
                 }
@@ -106,44 +115,75 @@ class MemoryDetailActivity : AppCompatActivity() {
         }
     }
 
-    // ─── Peuplement de l'UI ──────────────────────────────────────────────────
+    // ── Peuplement de l'UI avec animations enchaînées ────────────────────────
 
     private fun populateUI(memory: Memory) {
+        // Photos dans le ViewPager
+        photoPagerAdapter.submitPhotos(memory.photos)
+        thumbnailAdapter.submitPhotos(memory.photos)
+
+        // Indicateur
+        if (memory.photos.size > 1) {
+            binding.photoIndicator.visibility = View.VISIBLE
+            binding.photoIndicator.text = "1 / ${memory.photos.size}"
+        }
+
         // Textes
         binding.titleText.text = memory.title
         binding.locationText.text = memory.location
         binding.descriptionText.text = memory.description ?: ""
         binding.dateText.text = memory.date ?: ""
 
-        // Photo principale (première de la liste)
-        if (memory.photos.isNotEmpty()) {
-            showMainPhoto(memory.photos[0])
-        }
-
-        // Galerie miniatures
-        galleryAdapter.submitPhotos(memory.photos)
-
-        // Globe custom — positionne le point rouge selon lat/long
+        // Globe
         binding.globeView.setLocation(memory.latitude, memory.longitude)
         binding.globeLocationLabel.text = memory.location
 
-        // Animation fade-in de tout le contenu
-        binding.contentContainer.alpha = 0f
-        binding.contentContainer.animate()
-            .alpha(1f)
+        // ── Animation d'entrée en cascade ────────────────────────────────────
+        // Le ViewPager apparaît en premier (déjà visible via layout)
+        // puis le contenu remonte doucement depuis le bas
+        val views = listOf(
+            binding.titleText,
+            binding.locationRow,
+            binding.dateText,
+            binding.descriptionText,
+            binding.divider,
+            binding.globeSection
+        )
+
+        views.forEachIndexed { index, view ->
+            view.alpha = 0f
+            view.translationY = 40f
+            view.animate()
+                .alpha(1f)
+                .translationY(0f)
+                .setDuration(500)
+                .setStartDelay(200L + index * 80L)
+                .setInterpolator(android.view.animation.DecelerateInterpolator(2f))
+                .start()
+        }
+
+        // Globe : scale depuis 0.6 + fade
+        binding.globeSection.scaleX = 0.6f
+        binding.globeSection.scaleY = 0.6f
+        binding.globeSection.animate()
+            .scaleX(1f).scaleY(1f).alpha(1f)
             .setDuration(600)
-            .setStartDelay(100)
+            .setStartDelay(600)
+            .setInterpolator(android.view.animation.OvershootInterpolator(1.2f))
+            .start()
+
+        // Thumbnails slide depuis la droite
+        binding.thumbnailRecycler.translationX = 300f
+        binding.thumbnailRecycler.alpha = 0f
+        binding.thumbnailRecycler.animate()
+            .translationX(0f).alpha(1f)
+            .setDuration(500)
+            .setStartDelay(150)
+            .setInterpolator(android.view.animation.DecelerateInterpolator(2f))
             .start()
     }
 
-    private fun showMainPhoto(url: String) {
-        Glide.with(this)
-            .load(url)
-            .transition(DrawableTransitionOptions.withCrossFade(300))
-            .into(binding.mainPhotoImage)
-    }
-
-    private fun showLoading(loading: Boolean) {
+    private fun setLoading(loading: Boolean) {
         binding.loadingView.visibility = if (loading) View.VISIBLE else View.GONE
     }
 }

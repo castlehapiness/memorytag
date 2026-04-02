@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-    Écran d'accueil : minimaliste, fond sombre, animation pulsation NFC.
-    Design premium inspiré Apple / Instagram.
--->
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#080808">
+    android:background="#070707">
 
-    <!-- Logo / Icône centrale NFC -->
+    <!-- Groupe IDLE -->
     <LinearLayout
         android:id="@+id/idleGroup"
         android:layout_width="wrap_content"
@@ -22,76 +18,84 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- Animation ripple NFC -->
+        <!-- Icône NFC + anneaux -->
         <FrameLayout
-            android:id="@+id/nfcRippleView"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:id="@+id/nfcIconContainer"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
             android:layout_gravity="center">
 
-            <!-- Cercle externe animé -->
+            <!-- Anneau 3 — le plus externe -->
             <View
-                android:layout_width="120dp"
-                android:layout_height="120dp"
+                android:id="@+id/ring3"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
                 android:layout_gravity="center"
-                android:background="@drawable/ripple_circle_outer"
-                android:alpha="0.3"/>
+                android:background="@drawable/ring_pulse"
+                android:alpha="0"/>
 
-            <!-- Cercle moyen -->
+            <!-- Anneau 2 -->
             <View
-                android:layout_width="90dp"
-                android:layout_height="90dp"
+                android:id="@+id/ring2"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
                 android:layout_gravity="center"
-                android:background="@drawable/ripple_circle_mid"
-                android:alpha="0.5"/>
+                android:background="@drawable/ring_pulse"
+                android:alpha="0"/>
 
-            <!-- Cercle intérieur avec icône NFC -->
+            <!-- Anneau 1 — le plus proche de l'icône -->
+            <View
+                android:id="@+id/ring1"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:background="@drawable/ring_pulse"
+                android:alpha="0"/>
+
+            <!-- Icône centrale -->
             <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="64dp"
-                android:layout_height="64dp"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
                 android:layout_gravity="center"
-                android:padding="16dp"
+                android:padding="14dp"
                 android:background="@drawable/circle_white"
                 android:src="@drawable/ic_nfc"
-                android:tint="#080808"/>
+                android:tint="#070707"/>
         </FrameLayout>
 
-        <!-- Texte principal -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="36dp"
             android:text="Approchez votre tag"
-            android:textColor="#FFFFFF"
-            android:textSize="22sp"
-            android:fontFamily="sans-serif"
-            android:letterSpacing="0.02"/>
+            android:textColor="#F5F5F5"
+            android:textSize="24sp"
+            android:fontFamily="sans-serif-medium"
+            android:letterSpacing="-0.01"/>
 
-        <!-- Sous-titre -->
         <TextView
             android:id="@+id/nfcStatusText"
-            android:layout_width="wrap_content"
+            android:layout_width="260dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Scannez un tag NFC pour revivre ce moment"
-            android:textColor="#808080"
-            android:textSize="14sp"
-            android:fontFamily="sans-serif"
-            android:gravity="center"/>
+            android:layout_marginTop="10dp"
+            android:text="Scannez un tag NFC pour\nrevivre ce moment"
+            android:textColor="#555555"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:lineSpacingMultiplier="1.5"/>
 
-        <!-- Message d'erreur (caché par défaut) -->
         <TextView
             android:id="@+id/errorText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="18dp"
             android:visibility="gone"
-            android:textColor="#FF3B30"
+            android:textColor="#FF453A"
             android:textSize="13sp"
             android:gravity="center"/>
     </LinearLayout>
 
-    <!-- État chargement (spinner + texte) -->
+    <!-- Groupe LOADING -->
     <LinearLayout
         android:id="@+id/loadingGroup"
         android:layout_width="wrap_content"
@@ -105,29 +109,30 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <ProgressBar
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
             android:indeterminate="true"
             android:indeterminateTint="#FFFFFF"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="18dp"
             android:text="Chargement du souvenir…"
-            android:textColor="#808080"
+            android:textColor="#555555"
             android:textSize="14sp"/>
     </LinearLayout>
 
-    <!-- Bouton debug (dev only — à masquer en prod) -->
+    <!-- Bouton debug -->
     <TextView
         android:id="@+id/debugButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:text="[ Simuler un scan NFC ]"
-        android:textColor="#404040"
+        android:layout_marginBottom="44dp"
+        android:text="Simuler un scan NFC"
+        android:textColor="#2A2A2A"
         android:textSize="12sp"
+        android:letterSpacing="0.08"
         android:padding="12dp"
         android:clickable="true"
         android:focusable="true"
