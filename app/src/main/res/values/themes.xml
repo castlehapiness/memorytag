@@ -1,0 +1,25 @@
+<resources>
+
+    <!-- Thème principal : fond noir, design épuré -->
+    <style name="Theme.MemoryTag" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#FF3B30</item>
+        <item name="colorPrimaryVariant">#CC2200</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorSurface">#080808</item>
+        <item name="colorOnSurface">#FFFFFF</item>
+        <item name="android:windowBackground">#080808</item>
+        <item name="android:statusBarColor">#00000000</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+    <!-- Thème immersif pour le détail : status bar transparente -->
+    <style name="Theme.MemoryTag.Immersive" parent="Theme.MemoryTag">
+        <item name="android:statusBarColor">#00000000</item>
+        <item name="android:navigationBarColor">#00000000</item>
+        
+        <!-- Transition d'entrée douce -->
+        
+        
+    </style>
+
+</resources>

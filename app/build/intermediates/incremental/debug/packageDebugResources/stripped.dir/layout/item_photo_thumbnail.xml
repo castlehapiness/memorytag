@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Item de la galerie horizontale.
+    Miniature 72x72dp avec indicateur de sélection (point rouge).
+-->
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="72dp"
+    android:layout_height="72dp"
+    android:layout_marginEnd="8dp">
+
+    <!-- Image de la miniature -->
+    <ImageView
+        android:id="@+id/thumbnailImage"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:scaleType="centerCrop"
+        android:background="#1A1A1A"/>
+
+    <!-- Indicateur de sélection : point rouge en bas à droite -->
+    <View
+        android:id="@+id/selectionIndicator"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="6dp"
+        android:background="@drawable/indicator_dot_red"
+        android:visibility="gone"/>
+
+</FrameLayout>

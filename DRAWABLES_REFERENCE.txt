@@ -1,0 +1,66 @@
+<!-- ═══════════════════════════════════════════════════════════════
+     FICHIERS DRAWABLES À CRÉER DANS res/drawable/
+     ═══════════════════════════════════════════════════════════════ -->
+
+
+<!-- ── circle_white.xml ─────────────────────────────────────────────
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <solid android:color="#FFFFFF"/>
+</shape>
+-->
+
+
+<!-- ── ripple_circle_mid.xml ────────────────────────────────────────
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <solid android:color="#26FFFFFF"/>
+    <stroke android:width="1dp" android:color="#40FFFFFF"/>
+</shape>
+-->
+
+
+<!-- ── gradient_photo_bottom.xml ────────────────────────────────────
+     Dégradé transparent → noir sur le bas de la photo principale
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient
+        android:angle="270"
+        android:startColor="#00000000"
+        android:endColor="#CC080808"
+        android:type="linear"/>
+</shape>
+-->
+
+
+<!-- ── indicator_dot_red.xml ────────────────────────────────────────
+     Point rouge pour indiquer la miniature sélectionnée
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <solid android:color="#FF3B30"/>
+</shape>
+-->
+
+
+<!-- ── bg_button_back.xml ───────────────────────────────────────────
+     Fond du bouton retour : cercle noir semi-transparent
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <solid android:color="#80000000"/>
+</shape>
+-->
+
+
+<!-- ══════════════════════════════════════════════════════════════════
+     ICÔNES VECTORIELLES À CRÉER DANS res/drawable/
+     (ou importer depuis Material Symbols dans Android Studio)
+     ══════════════════════════════════════════════════════════════════
+
+     ic_nfc.xml          → icône NFC (Vector Asset > Material > "nfc")
+     ic_location_pin.xml → icône pin map ("location_on")
+     ic_arrow_back.xml   → flèche retour ("arrow_back")
+-->
