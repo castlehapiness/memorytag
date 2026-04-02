@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "551691737864",
+    "project_id": "memorytag-d8043",
+    "storage_bucket": "memorytag-d8043.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:551691737864:android:c7b56b3d89ebbee1edaabd",
+        "android_client_info": {
+          "package_name": "com.memorytag.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYNwu_ftUyA6fOPD8QiLVPtwIrdMiIVbs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

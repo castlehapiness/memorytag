@@ -2,7 +2,7 @@ package com.memorytag.app.data.repository
 
 import com.memorytag.app.data.model.Memory
 import kotlinx.coroutines.delay
-
+import android.util.Log
 /**
  * Repository des souvenirs.
  * Abstrait la source de données (API réelle ou mock).
@@ -17,9 +17,13 @@ class MemoryRepository {
     suspend fun fetchMemory(memoryId: String): Memory {
         delay(800) // Simule la latence réseau
 
+        val normalizedId = memoryId.trim().uppercase()
+        Log.d("MEMORY_DEBUG", "memoryId brut='$memoryId' | normalisé='$normalizedId'")
+
+
         // --- MOCK DATA ---
         // En production, remplacer par : apiService.getMemory(memoryId)
-        return getMockMemory(memoryId)
+        return getMockMemory(normalizedId)
     }
 
     /**
@@ -60,7 +64,7 @@ class MemoryRepository {
             )
         )
 
-        // Retourne le mock correspondant, ou Paris par défaut
-        return mockDatabase[id] ?: mockDatabase["PARIS_001"]!!
-    }
+        // Retourne le mock correspondant, ou une erreur
+        return mockDatabase[id]
+            ?: throw IllegalArgumentException("Aucun souvenir trouvé pour l'id: '$id'")    }
 }
