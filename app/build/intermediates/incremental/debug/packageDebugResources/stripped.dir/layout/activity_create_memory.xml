@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Écran de création d'un souvenir.
+    Design : fond #070707, champs discrets, bouton rouge Apple.
+    Inspiration : formulaires iOS — minimalistes, bien espacés.
+-->
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#070707"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="48dp">
+
+        <!-- ── HEADER ──────────────────────────────────────────────────────── -->
+
+        <!-- Bouton retour -->
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="52dp"
+            android:background="@drawable/bg_button_back"
+            android:padding="10dp"
+            android:src="@drawable/ic_arrow_back"
+            android:tint="#FFFFFF"
+            android:contentDescription="Retour"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <!-- Titre de l'écran -->
+        <TextView
+            android:id="@+id/screenTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="24dp"
+            android:text="Nouveau souvenir"
+            android:textColor="#F2F2F2"
+            android:textSize="28sp"
+            android:fontFamily="sans-serif-medium"
+            android:letterSpacing="-0.02"
+            app:layout_constraintStart_toEndOf="@id/backButton"
+            app:layout_constraintTop_toTopOf="@id/backButton"
+            app:layout_constraintBottom_toBottomOf="@id/backButton"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- Sous-titre -->
+        <TextView
+            android:id="@+id/screenSubtitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="8dp"
+            android:text="Il sera accessible via un tag NFC"
+            android:textColor="#3A3A3A"
+            android:textSize="14sp"
+            android:fontFamily="sans-serif"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/backButton"/>
+
+        <!-- ── FORMULAIRE ──────────────────────────────────────────────────── -->
+
+        <LinearLayout
+            android:id="@+id/formContainer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="40dp"
+            app:layout_constraintTop_toBottomOf="@id/screenSubtitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <!-- Label TITRE -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TITRE"
+                android:textColor="#3A3A3A"
+                android:textSize="10sp"
+                android:letterSpacing="0.15"
+                android:fontFamily="sans-serif-medium"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- Champ TITRE -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:boxStrokeColor="@color/stroke_dark"
+                app:boxStrokeWidth="1dp"
+                app:boxBackgroundColor="@color/surface_dark"
+                app:hintTextColor="@color/text_hint">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/titleInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="ex: Week-end à Paris"
+                    android:textColor="#F2F2F2"
+                    android:textColorHint="#333333"
+                    android:textSize="16sp"
+                    android:inputType="textCapSentences"
+                    android:maxLines="1"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Label LOCALISATION -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="LOCALISATION"
+                android:textColor="#3A3A3A"
+                android:textSize="10sp"
+                android:letterSpacing="0.15"
+                android:fontFamily="sans-serif-medium"
+                android:layout_marginTop="28dp"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- Champ LOCALISATION -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:boxStrokeColor="@color/stroke_dark"
+                app:boxStrokeWidth="1dp"
+                app:boxBackgroundColor="@color/surface_dark"
+                app:hintTextColor="@color/text_hint"
+                app:startIconDrawable="@drawable/ic_location_pin"
+                app:startIconTint="@color/accent_red">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/locationInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="ex: Paris, France"
+                    android:textColor="#F2F2F2"
+                    android:textColorHint="#333333"
+                    android:textSize="16sp"
+                    android:inputType="textCapSentences"
+                    android:maxLines="1"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Label DESCRIPTION -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DESCRIPTION"
+                android:textColor="#3A3A3A"
+                android:textSize="10sp"
+                android:letterSpacing="0.15"
+                android:fontFamily="sans-serif-medium"
+                android:layout_marginTop="28dp"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- Champ DESCRIPTION -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:boxStrokeColor="@color/stroke_dark"
+                app:boxStrokeWidth="1dp"
+                app:boxBackgroundColor="@color/surface_dark"
+                app:hintTextColor="@color/text_hint"
+                app:counterEnabled="true"
+                app:counterMaxLength="200"
+                app:counterTextColor="@color/text_dim">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/descriptionInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Une courte description de ce souvenir…"
+                    android:textColor="#F2F2F2"
+                    android:textColorHint="#333333"
+                    android:textSize="15sp"
+                    android:inputType="textCapSentences|textMultiLine"
+                    android:minLines="3"
+                    android:maxLines="5"
+                    android:maxLength="200"
+                    android:gravity="top"
+                    android:paddingTop="14dp"
+                    android:paddingBottom="14dp"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <!-- ── BOUTON CRÉER ────────────────────────────────────────────────── -->
+
+        <FrameLayout
+            android:id="@+id/buttonContainer"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="40dp"
+            app:layout_constraintTop_toBottomOf="@id/formContainer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <!-- Bouton principal -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/createButton"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Créer le souvenir"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:fontFamily="sans-serif-medium"
+                android:letterSpacing="0.01"
+                app:backgroundTint="@color/button_red"
+                app:cornerRadius="14dp"
+                app:rippleColor="@color/ripple_white"/>
+
+            <!-- Spinner de chargement (superposé au bouton) -->
+            <ProgressBar
+                android:id="@+id/loadingIndicator"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:indeterminate="true"
+                android:indeterminateTint="#FFFFFF"
+                android:visibility="gone"/>
+
+        </FrameLayout>
+
+        <!-- ── BLOC ID CRÉÉ (caché jusqu'au succès) ───────────────────────── -->
+
+        <LinearLayout
+            android:id="@+id/createdIdContainer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="32dp"
+            android:padding="20dp"
+            android:background="@drawable/bg_id_card"
+            android:visibility="gone"
+            android:alpha="0"
+            app:layout_constraintTop_toBottomOf="@id/buttonContainer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ID DU SOUVENIR"
+                android:textColor="#3A3A3A"
+                android:textSize="10sp"
+                android:letterSpacing="0.15"
+                android:fontFamily="sans-serif-medium"
+                android:layout_marginBottom="10dp"/>
+
+            <!-- L'UUID généré — à encoder sur le tag NFC -->
+            <TextView
+                android:id="@+id/createdIdText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#F2F2F2"
+                android:textSize="13sp"
+                android:fontFamily="monospace"
+                android:letterSpacing="0.03"
+                android:lineSpacingMultiplier="1.4"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Copiez cet ID et encodez-le sur votre tag NFC"
+                android:textColor="#444444"
+                android:textSize="12sp"
+                android:lineSpacingMultiplier="1.4"/>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

@@ -12,6 +12,7 @@ import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.button.MaterialButton;
 import com.memorytag.app.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -20,6 +21,9 @@ import java.lang.String;
 public final class ActivityMainBinding implements ViewBinding {
   @NonNull
   private final ConstraintLayout rootView;
+
+  @NonNull
+  public final MaterialButton createMemoryButton;
 
   @NonNull
   public final TextView debugButton;
@@ -48,12 +52,14 @@ public final class ActivityMainBinding implements ViewBinding {
   @NonNull
   public final View ring3;
 
-  private ActivityMainBinding(@NonNull ConstraintLayout rootView, @NonNull TextView debugButton,
+  private ActivityMainBinding(@NonNull ConstraintLayout rootView,
+      @NonNull MaterialButton createMemoryButton, @NonNull TextView debugButton,
       @NonNull TextView errorText, @NonNull LinearLayout idleGroup,
       @NonNull LinearLayout loadingGroup, @NonNull FrameLayout nfcIconContainer,
       @NonNull TextView nfcStatusText, @NonNull View ring1, @NonNull View ring2,
       @NonNull View ring3) {
     this.rootView = rootView;
+    this.createMemoryButton = createMemoryButton;
     this.debugButton = debugButton;
     this.errorText = errorText;
     this.idleGroup = idleGroup;
@@ -92,6 +98,12 @@ public final class ActivityMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.createMemoryButton;
+      MaterialButton createMemoryButton = ViewBindings.findChildViewById(rootView, id);
+      if (createMemoryButton == null) {
+        break missingId;
+      }
+
       id = R.id.debugButton;
       TextView debugButton = ViewBindings.findChildViewById(rootView, id);
       if (debugButton == null) {
@@ -146,8 +158,8 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMainBinding((ConstraintLayout) rootView, debugButton, errorText, idleGroup,
-          loadingGroup, nfcIconContainer, nfcStatusText, ring1, ring2, ring3);
+      return new ActivityMainBinding((ConstraintLayout) rootView, createMemoryButton, debugButton,
+          errorText, idleGroup, loadingGroup, nfcIconContainer, nfcStatusText, ring1, ring2, ring3);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

@@ -1,8 +1,8 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
 3    package="com.memorytag.app"
-4    android:versionCode="2"
-5    android:versionName="2.0" >
+4    android:versionCode="3"
+5    android:versionName="3.0" >
 6
 7    <uses-sdk
 8        android:minSdkVersion="26"
@@ -10,185 +10,350 @@
 10
 11    <!-- Permissions NFC -->
 12    <uses-permission android:name="android.permission.NFC" />
-12-->/Users/dina/Downloads/MemoryTag 2/app/src/main/AndroidManifest.xml:6:5-62
-12-->/Users/dina/Downloads/MemoryTag 2/app/src/main/AndroidManifest.xml:6:22-59
+12-->/Users/dina/Downloads/MemoryTag 6/app/src/main/AndroidManifest.xml:6:5-62
+12-->/Users/dina/Downloads/MemoryTag 6/app/src/main/AndroidManifest.xml:6:22-59
 13    <uses-permission android:name="android.permission.VIBRATE" />
-13-->/Users/dina/Downloads/MemoryTag 2/app/src/main/AndroidManifest.xml:7:5-66
-13-->/Users/dina/Downloads/MemoryTag 2/app/src/main/AndroidManifest.xml:7:22-63
+13-->/Users/dina/Downloads/MemoryTag 6/app/src/main/AndroidManifest.xml:7:5-66
+13-->/Users/dina/Downloads/MemoryTag 6/app/src/main/AndroidManifest.xml:7:22-63
 14    <uses-permission android:name="android.permission.INTERNET" />
-14-->/Users/dina/Downloads/MemoryTag 2/app/src/main/AndroidManifest.xml:8:5-67
-14-->/Users/dina/Downloads/MemoryTag 2/app/src/main/AndroidManifest.xml:8:22-64
+14-->/Users/dina/Downloads/MemoryTag 6/app/src/main/AndroidManifest.xml:8:5-67
+14-->/Users/dina/Downloads/MemoryTag 6/app/src/main/AndroidManifest.xml:8:22-64
 15    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-15-->/Users/dina/Downloads/MemoryTag 2/app/src/main/AndroidManifest.xml:9:5-79
-15-->/Users/dina/Downloads/MemoryTag 2/app/src/main/AndroidManifest.xml:9:22-76
+15-->/Users/dina/Downloads/MemoryTag 6/app/src/main/AndroidManifest.xml:9:5-79
+15-->/Users/dina/Downloads/MemoryTag 6/app/src/main/AndroidManifest.xml:9:22-76
 16
 17    <!-- Requiert un hardware NFC -->
 18    <uses-feature
-18-->/Users/dina/Downloads/MemoryTag 2/app/src/main/AndroidManifest.xml:12:5-14:35
+18-->/Users/dina/Downloads/MemoryTag 6/app/src/main/AndroidManifest.xml:12:5-14:35
 19        android:name="android.hardware.nfc"
-19-->/Users/dina/Downloads/MemoryTag 2/app/src/main/AndroidManifest.xml:13:9-44
+19-->/Users/dina/Downloads/MemoryTag 6/app/src/main/AndroidManifest.xml:13:9-44
 20        android:required="true" />
-20-->/Users/dina/Downloads/MemoryTag 2/app/src/main/AndroidManifest.xml:14:9-32
+20-->/Users/dina/Downloads/MemoryTag 6/app/src/main/AndroidManifest.xml:14:9-32
 21
-22    <permission
-22-->[androidx.core:core:1.12.0] /Users/dina/.gradle/caches/transforms-3/808f25e33273cf777e1c687f415f5885/transformed/core-1.12.0/AndroidManifest.xml:22:5-24:47
-23        android:name="com.memorytag.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
-23-->[androidx.core:core:1.12.0] /Users/dina/.gradle/caches/transforms-3/808f25e33273cf777e1c687f415f5885/transformed/core-1.12.0/AndroidManifest.xml:23:9-81
-24        android:protectionLevel="signature" />
-24-->[androidx.core:core:1.12.0] /Users/dina/.gradle/caches/transforms-3/808f25e33273cf777e1c687f415f5885/transformed/core-1.12.0/AndroidManifest.xml:24:9-44
-25
-26    <uses-permission android:name="com.memorytag.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-26-->[androidx.core:core:1.12.0] /Users/dina/.gradle/caches/transforms-3/808f25e33273cf777e1c687f415f5885/transformed/core-1.12.0/AndroidManifest.xml:26:5-97
-26-->[androidx.core:core:1.12.0] /Users/dina/.gradle/caches/transforms-3/808f25e33273cf777e1c687f415f5885/transformed/core-1.12.0/AndroidManifest.xml:26:22-94
+22    <uses-permission android:name="android.permission.WAKE_LOCK" />
+22-->[com.google.android.gms:play-services-measurement-api:21.5.1] /Users/dina/.gradle/caches/transforms-3/58956935b9eee892fea99ed7efa0d5ba/transformed/play-services-measurement-api-21.5.1/AndroidManifest.xml:24:5-68
+22-->[com.google.android.gms:play-services-measurement-api:21.5.1] /Users/dina/.gradle/caches/transforms-3/58956935b9eee892fea99ed7efa0d5ba/transformed/play-services-measurement-api-21.5.1/AndroidManifest.xml:24:22-65
+23    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
+23-->[com.google.android.gms:play-services-measurement-api:21.5.1] /Users/dina/.gradle/caches/transforms-3/58956935b9eee892fea99ed7efa0d5ba/transformed/play-services-measurement-api-21.5.1/AndroidManifest.xml:25:5-79
+23-->[com.google.android.gms:play-services-measurement-api:21.5.1] /Users/dina/.gradle/caches/transforms-3/58956935b9eee892fea99ed7efa0d5ba/transformed/play-services-measurement-api-21.5.1/AndroidManifest.xml:25:22-76
+24    <uses-permission android:name="android.permission.ACCESS_ADSERVICES_ATTRIBUTION" />
+24-->[com.google.android.gms:play-services-measurement-api:21.5.1] /Users/dina/.gradle/caches/transforms-3/58956935b9eee892fea99ed7efa0d5ba/transformed/play-services-measurement-api-21.5.1/AndroidManifest.xml:26:5-88
+24-->[com.google.android.gms:play-services-measurement-api:21.5.1] /Users/dina/.gradle/caches/transforms-3/58956935b9eee892fea99ed7efa0d5ba/transformed/play-services-measurement-api-21.5.1/AndroidManifest.xml:26:22-85
+25    <uses-permission android:name="android.permission.ACCESS_ADSERVICES_AD_ID" />
+25-->[com.google.android.gms:play-services-measurement-api:21.5.1] /Users/dina/.gradle/caches/transforms-3/58956935b9eee892fea99ed7efa0d5ba/transformed/play-services-measurement-api-21.5.1/AndroidManifest.xml:27:5-82
+25-->[com.google.android.gms:play-services-measurement-api:21.5.1] /Users/dina/.gradle/caches/transforms-3/58956935b9eee892fea99ed7efa0d5ba/transformed/play-services-measurement-api-21.5.1/AndroidManifest.xml:27:22-79
+26    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+26-->[com.google.android.gms:play-services-measurement:21.5.1] /Users/dina/.gradle/caches/transforms-3/fc3c4d6a25fac9cc8b2ed042a85140ba/transformed/play-services-measurement-21.5.1/AndroidManifest.xml:26:5-110
+26-->[com.google.android.gms:play-services-measurement:21.5.1] /Users/dina/.gradle/caches/transforms-3/fc3c4d6a25fac9cc8b2ed042a85140ba/transformed/play-services-measurement-21.5.1/AndroidManifest.xml:26:22-107
 27
-28    <application
-28-->/Users/dina/Downloads/MemoryTag 2/app/src/main/AndroidManifest.xml:16:5-55:19
-29        android:allowBackup="true"
-29-->/Users/dina/Downloads/MemoryTag 2/app/src/main/AndroidManifest.xml:17:9-35
-30        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-30-->[androidx.core:core:1.12.0] /Users/dina/.gradle/caches/transforms-3/808f25e33273cf777e1c687f415f5885/transformed/core-1.12.0/AndroidManifest.xml:28:18-86
-31        android:debuggable="true"
-32        android:extractNativeLibs="false"
-33        android:icon="@mipmap/ic_launcher"
-33-->/Users/dina/Downloads/MemoryTag 2/app/src/main/AndroidManifest.xml:18:9-43
-34        android:label="@string/app_name"
-34-->/Users/dina/Downloads/MemoryTag 2/app/src/main/AndroidManifest.xml:19:9-41
-35        android:roundIcon="@mipmap/ic_launcher_round"
-35-->/Users/dina/Downloads/MemoryTag 2/app/src/main/AndroidManifest.xml:20:9-54
-36        android:supportsRtl="true"
-36-->/Users/dina/Downloads/MemoryTag 2/app/src/main/AndroidManifest.xml:21:9-35
-37        android:theme="@style/Theme.MemoryTag"
-37-->/Users/dina/Downloads/MemoryTag 2/app/src/main/AndroidManifest.xml:22:9-47
-38        android:usesCleartextTraffic="true" >
-38-->/Users/dina/Downloads/MemoryTag 2/app/src/main/AndroidManifest.xml:23:9-44
-39
-40        <!-- Activité principale : scan NFC -->
-41        <activity
-41-->/Users/dina/Downloads/MemoryTag 2/app/src/main/AndroidManifest.xml:26:9-47:20
-42            android:name="com.memorytag.app.ui.MainActivity"
-42-->/Users/dina/Downloads/MemoryTag 2/app/src/main/AndroidManifest.xml:27:13-44
-43            android:exported="true"
-43-->/Users/dina/Downloads/MemoryTag 2/app/src/main/AndroidManifest.xml:28:13-36
-44            android:launchMode="singleTop" >
-44-->/Users/dina/Downloads/MemoryTag 2/app/src/main/AndroidManifest.xml:29:13-43
-45            <intent-filter>
-45-->/Users/dina/Downloads/MemoryTag 2/app/src/main/AndroidManifest.xml:30:13-33:29
-46                <action android:name="android.intent.action.MAIN" />
-46-->/Users/dina/Downloads/MemoryTag 2/app/src/main/AndroidManifest.xml:31:17-69
-46-->/Users/dina/Downloads/MemoryTag 2/app/src/main/AndroidManifest.xml:31:25-66
-47
-48                <category android:name="android.intent.category.LAUNCHER" />
-48-->/Users/dina/Downloads/MemoryTag 2/app/src/main/AndroidManifest.xml:32:17-77
-48-->/Users/dina/Downloads/MemoryTag 2/app/src/main/AndroidManifest.xml:32:27-74
-49            </intent-filter>
-50
-51            <!-- Intercepte les intents NFC NDEF (format standard) -->
+28    <permission
+28-->[androidx.core:core:1.12.0] /Users/dina/.gradle/caches/transforms-3/98c9057881eff89cd37ae9aacc468169/transformed/core-1.12.0/AndroidManifest.xml:22:5-24:47
+29        android:name="com.memorytag.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+29-->[androidx.core:core:1.12.0] /Users/dina/.gradle/caches/transforms-3/98c9057881eff89cd37ae9aacc468169/transformed/core-1.12.0/AndroidManifest.xml:23:9-81
+30        android:protectionLevel="signature" />
+30-->[androidx.core:core:1.12.0] /Users/dina/.gradle/caches/transforms-3/98c9057881eff89cd37ae9aacc468169/transformed/core-1.12.0/AndroidManifest.xml:24:9-44
+31
+32    <uses-permission android:name="com.memorytag.app.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+32-->[androidx.core:core:1.12.0] /Users/dina/.gradle/caches/transforms-3/98c9057881eff89cd37ae9aacc468169/transformed/core-1.12.0/AndroidManifest.xml:26:5-97
+32-->[androidx.core:core:1.12.0] /Users/dina/.gradle/caches/transforms-3/98c9057881eff89cd37ae9aacc468169/transformed/core-1.12.0/AndroidManifest.xml:26:22-94
+33
+34    <application
+34-->/Users/dina/Downloads/MemoryTag 6/app/src/main/AndroidManifest.xml:16:5-62:19
+35        android:allowBackup="true"
+35-->/Users/dina/Downloads/MemoryTag 6/app/src/main/AndroidManifest.xml:17:9-35
+36        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+36-->[androidx.core:core:1.12.0] /Users/dina/.gradle/caches/transforms-3/98c9057881eff89cd37ae9aacc468169/transformed/core-1.12.0/AndroidManifest.xml:28:18-86
+37        android:debuggable="true"
+38        android:extractNativeLibs="false"
+39        android:icon="@mipmap/ic_launcher"
+39-->/Users/dina/Downloads/MemoryTag 6/app/src/main/AndroidManifest.xml:18:9-43
+40        android:label="@string/app_name"
+40-->/Users/dina/Downloads/MemoryTag 6/app/src/main/AndroidManifest.xml:19:9-41
+41        android:roundIcon="@mipmap/ic_launcher_round"
+41-->/Users/dina/Downloads/MemoryTag 6/app/src/main/AndroidManifest.xml:20:9-54
+42        android:supportsRtl="true"
+42-->/Users/dina/Downloads/MemoryTag 6/app/src/main/AndroidManifest.xml:21:9-35
+43        android:testOnly="true"
+44        android:theme="@style/Theme.MemoryTag"
+44-->/Users/dina/Downloads/MemoryTag 6/app/src/main/AndroidManifest.xml:22:9-47
+45        android:usesCleartextTraffic="true" >
+45-->/Users/dina/Downloads/MemoryTag 6/app/src/main/AndroidManifest.xml:23:9-44
+46
+47        <!-- Activité principale : scan NFC -->
+48        <activity
+48-->/Users/dina/Downloads/MemoryTag 6/app/src/main/AndroidManifest.xml:26:9-47:20
+49            android:name="com.memorytag.app.ui.MainActivity"
+49-->/Users/dina/Downloads/MemoryTag 6/app/src/main/AndroidManifest.xml:27:13-44
+50            android:exported="true"
+50-->/Users/dina/Downloads/MemoryTag 6/app/src/main/AndroidManifest.xml:28:13-36
+51            android:launchMode="singleTop" >
+51-->/Users/dina/Downloads/MemoryTag 6/app/src/main/AndroidManifest.xml:29:13-43
 52            <intent-filter>
-52-->/Users/dina/Downloads/MemoryTag 2/app/src/main/AndroidManifest.xml:36:13-40:29
-53                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
-53-->/Users/dina/Downloads/MemoryTag 2/app/src/main/AndroidManifest.xml:37:17-77
-53-->/Users/dina/Downloads/MemoryTag 2/app/src/main/AndroidManifest.xml:37:25-74
+52-->/Users/dina/Downloads/MemoryTag 6/app/src/main/AndroidManifest.xml:30:13-33:29
+53                <action android:name="android.intent.action.MAIN" />
+53-->/Users/dina/Downloads/MemoryTag 6/app/src/main/AndroidManifest.xml:31:17-69
+53-->/Users/dina/Downloads/MemoryTag 6/app/src/main/AndroidManifest.xml:31:25-66
 54
-55                <category android:name="android.intent.category.DEFAULT" />
-55-->/Users/dina/Downloads/MemoryTag 2/app/src/main/AndroidManifest.xml:38:17-76
-55-->/Users/dina/Downloads/MemoryTag 2/app/src/main/AndroidManifest.xml:38:27-73
-56
-57                <data
-57-->/Users/dina/Downloads/MemoryTag 2/app/src/main/AndroidManifest.xml:39:17-77
-58                    android:host="memorytag.app"
-58-->/Users/dina/Downloads/MemoryTag 2/app/src/main/AndroidManifest.xml:39:46-74
-59                    android:scheme="https" />
-59-->/Users/dina/Downloads/MemoryTag 2/app/src/main/AndroidManifest.xml:39:23-45
-60            </intent-filter>
+55                <category android:name="android.intent.category.LAUNCHER" />
+55-->/Users/dina/Downloads/MemoryTag 6/app/src/main/AndroidManifest.xml:32:17-77
+55-->/Users/dina/Downloads/MemoryTag 6/app/src/main/AndroidManifest.xml:32:27-74
+56            </intent-filter>
+57
+58            <!-- Intercepte les intents NFC NDEF (format standard) -->
+59            <intent-filter>
+59-->/Users/dina/Downloads/MemoryTag 6/app/src/main/AndroidManifest.xml:36:13-40:29
+60                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+60-->/Users/dina/Downloads/MemoryTag 6/app/src/main/AndroidManifest.xml:37:17-77
+60-->/Users/dina/Downloads/MemoryTag 6/app/src/main/AndroidManifest.xml:37:25-74
 61
-62            <!-- Intercepte aussi les tags NFC génériques -->
-63            <intent-filter>
-63-->/Users/dina/Downloads/MemoryTag 2/app/src/main/AndroidManifest.xml:43:13-46:29
-64                <action android:name="android.nfc.action.TAG_DISCOVERED" />
-64-->/Users/dina/Downloads/MemoryTag 2/app/src/main/AndroidManifest.xml:44:17-76
-64-->/Users/dina/Downloads/MemoryTag 2/app/src/main/AndroidManifest.xml:44:25-73
-65
-66                <category android:name="android.intent.category.DEFAULT" />
-66-->/Users/dina/Downloads/MemoryTag 2/app/src/main/AndroidManifest.xml:38:17-76
-66-->/Users/dina/Downloads/MemoryTag 2/app/src/main/AndroidManifest.xml:38:27-73
+62                <category android:name="android.intent.category.DEFAULT" />
+62-->/Users/dina/Downloads/MemoryTag 6/app/src/main/AndroidManifest.xml:38:17-76
+62-->/Users/dina/Downloads/MemoryTag 6/app/src/main/AndroidManifest.xml:38:27-73
+63
+64                <data
+64-->/Users/dina/Downloads/MemoryTag 6/app/src/main/AndroidManifest.xml:39:17-77
+65                    android:host="memorytag.app"
+65-->/Users/dina/Downloads/MemoryTag 6/app/src/main/AndroidManifest.xml:39:46-74
+66                    android:scheme="https" />
+66-->/Users/dina/Downloads/MemoryTag 6/app/src/main/AndroidManifest.xml:39:23-45
 67            </intent-filter>
-68        </activity>
-69
-70        <!-- Activité d'affichage du souvenir -->
-71        <activity
-71-->/Users/dina/Downloads/MemoryTag 2/app/src/main/AndroidManifest.xml:50:9-53:64
-72            android:name="com.memorytag.app.ui.MemoryDetailActivity"
-72-->/Users/dina/Downloads/MemoryTag 2/app/src/main/AndroidManifest.xml:51:13-52
-73            android:exported="false"
-73-->/Users/dina/Downloads/MemoryTag 2/app/src/main/AndroidManifest.xml:52:13-37
-74            android:theme="@style/Theme.MemoryTag.Immersive" />
-74-->/Users/dina/Downloads/MemoryTag 2/app/src/main/AndroidManifest.xml:53:13-61
-75
-76        <provider
-76-->[androidx.emoji2:emoji2:1.2.0] /Users/dina/.gradle/caches/transforms-3/e90553fe079c912af51466fd36ee000d/transformed/emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
-77            android:name="androidx.startup.InitializationProvider"
-77-->[androidx.emoji2:emoji2:1.2.0] /Users/dina/.gradle/caches/transforms-3/e90553fe079c912af51466fd36ee000d/transformed/emoji2-1.2.0/AndroidManifest.xml:25:13-67
-78            android:authorities="com.memorytag.app.androidx-startup"
-78-->[androidx.emoji2:emoji2:1.2.0] /Users/dina/.gradle/caches/transforms-3/e90553fe079c912af51466fd36ee000d/transformed/emoji2-1.2.0/AndroidManifest.xml:26:13-68
-79            android:exported="false" >
-79-->[androidx.emoji2:emoji2:1.2.0] /Users/dina/.gradle/caches/transforms-3/e90553fe079c912af51466fd36ee000d/transformed/emoji2-1.2.0/AndroidManifest.xml:27:13-37
-80            <meta-data
-80-->[androidx.emoji2:emoji2:1.2.0] /Users/dina/.gradle/caches/transforms-3/e90553fe079c912af51466fd36ee000d/transformed/emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
-81                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-81-->[androidx.emoji2:emoji2:1.2.0] /Users/dina/.gradle/caches/transforms-3/e90553fe079c912af51466fd36ee000d/transformed/emoji2-1.2.0/AndroidManifest.xml:30:17-75
-82                android:value="androidx.startup" />
-82-->[androidx.emoji2:emoji2:1.2.0] /Users/dina/.gradle/caches/transforms-3/e90553fe079c912af51466fd36ee000d/transformed/emoji2-1.2.0/AndroidManifest.xml:31:17-49
-83            <meta-data
-83-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/dina/.gradle/caches/transforms-3/35c117c2f3f4502d875186f761743b30/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:29:13-31:52
-84                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-84-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/dina/.gradle/caches/transforms-3/35c117c2f3f4502d875186f761743b30/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:30:17-78
-85                android:value="androidx.startup" />
-85-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/dina/.gradle/caches/transforms-3/35c117c2f3f4502d875186f761743b30/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:31:17-49
-86            <meta-data
-86-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dina/.gradle/caches/transforms-3/06b948aa8b95f6cd30e193c46b0a22d9/transformed/profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
-87                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
-87-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dina/.gradle/caches/transforms-3/06b948aa8b95f6cd30e193c46b0a22d9/transformed/profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
-88                android:value="androidx.startup" />
-88-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dina/.gradle/caches/transforms-3/06b948aa8b95f6cd30e193c46b0a22d9/transformed/profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
-89        </provider>
-90
-91        <receiver
-91-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dina/.gradle/caches/transforms-3/06b948aa8b95f6cd30e193c46b0a22d9/transformed/profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
-92            android:name="androidx.profileinstaller.ProfileInstallReceiver"
-92-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dina/.gradle/caches/transforms-3/06b948aa8b95f6cd30e193c46b0a22d9/transformed/profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
-93            android:directBootAware="false"
-93-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dina/.gradle/caches/transforms-3/06b948aa8b95f6cd30e193c46b0a22d9/transformed/profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
-94            android:enabled="true"
-94-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dina/.gradle/caches/transforms-3/06b948aa8b95f6cd30e193c46b0a22d9/transformed/profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
-95            android:exported="true"
-95-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dina/.gradle/caches/transforms-3/06b948aa8b95f6cd30e193c46b0a22d9/transformed/profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
-96            android:permission="android.permission.DUMP" >
-96-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dina/.gradle/caches/transforms-3/06b948aa8b95f6cd30e193c46b0a22d9/transformed/profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
-97            <intent-filter>
-97-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dina/.gradle/caches/transforms-3/06b948aa8b95f6cd30e193c46b0a22d9/transformed/profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
-98                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
-98-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dina/.gradle/caches/transforms-3/06b948aa8b95f6cd30e193c46b0a22d9/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
-98-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dina/.gradle/caches/transforms-3/06b948aa8b95f6cd30e193c46b0a22d9/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
-99            </intent-filter>
-100            <intent-filter>
-100-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dina/.gradle/caches/transforms-3/06b948aa8b95f6cd30e193c46b0a22d9/transformed/profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
-101                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
-101-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dina/.gradle/caches/transforms-3/06b948aa8b95f6cd30e193c46b0a22d9/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
-101-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dina/.gradle/caches/transforms-3/06b948aa8b95f6cd30e193c46b0a22d9/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
-102            </intent-filter>
-103            <intent-filter>
-103-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dina/.gradle/caches/transforms-3/06b948aa8b95f6cd30e193c46b0a22d9/transformed/profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
-104                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
-104-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dina/.gradle/caches/transforms-3/06b948aa8b95f6cd30e193c46b0a22d9/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
-104-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dina/.gradle/caches/transforms-3/06b948aa8b95f6cd30e193c46b0a22d9/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
-105            </intent-filter>
-106            <intent-filter>
-106-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dina/.gradle/caches/transforms-3/06b948aa8b95f6cd30e193c46b0a22d9/transformed/profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
-107                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
-107-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dina/.gradle/caches/transforms-3/06b948aa8b95f6cd30e193c46b0a22d9/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
-107-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dina/.gradle/caches/transforms-3/06b948aa8b95f6cd30e193c46b0a22d9/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:25-92
-108            </intent-filter>
-109        </receiver>
-110    </application>
-111
-112</manifest>
+68
+69            <!-- Intercepte aussi les tags NFC génériques -->
+70            <intent-filter>
+70-->/Users/dina/Downloads/MemoryTag 6/app/src/main/AndroidManifest.xml:43:13-46:29
+71                <action android:name="android.nfc.action.TAG_DISCOVERED" />
+71-->/Users/dina/Downloads/MemoryTag 6/app/src/main/AndroidManifest.xml:44:17-76
+71-->/Users/dina/Downloads/MemoryTag 6/app/src/main/AndroidManifest.xml:44:25-73
+72
+73                <category android:name="android.intent.category.DEFAULT" />
+73-->/Users/dina/Downloads/MemoryTag 6/app/src/main/AndroidManifest.xml:38:17-76
+73-->/Users/dina/Downloads/MemoryTag 6/app/src/main/AndroidManifest.xml:38:27-73
+74            </intent-filter>
+75        </activity>
+76
+77        <!-- Activité d'affichage du souvenir -->
+78        <activity
+78-->/Users/dina/Downloads/MemoryTag 6/app/src/main/AndroidManifest.xml:50:9-53:64
+79            android:name="com.memorytag.app.ui.MemoryDetailActivity"
+79-->/Users/dina/Downloads/MemoryTag 6/app/src/main/AndroidManifest.xml:51:13-52
+80            android:exported="false"
+80-->/Users/dina/Downloads/MemoryTag 6/app/src/main/AndroidManifest.xml:52:13-37
+81            android:theme="@style/Theme.MemoryTag.Immersive" />
+81-->/Users/dina/Downloads/MemoryTag 6/app/src/main/AndroidManifest.xml:53:13-61
+82
+83        <!-- Activité de création d'un souvenir -->
+84        <activity
+84-->/Users/dina/Downloads/MemoryTag 6/app/src/main/AndroidManifest.xml:57:9-61:54
+85            android:name="com.memorytag.app.ui.CreateMemoryActivity"
+85-->/Users/dina/Downloads/MemoryTag 6/app/src/main/AndroidManifest.xml:58:13-52
+86            android:exported="false"
+86-->/Users/dina/Downloads/MemoryTag 6/app/src/main/AndroidManifest.xml:59:13-37
+87            android:theme="@style/Theme.MemoryTag"
+87-->/Users/dina/Downloads/MemoryTag 6/app/src/main/AndroidManifest.xml:61:13-51
+88            android:windowSoftInputMode="adjustResize" />
+88-->/Users/dina/Downloads/MemoryTag 6/app/src/main/AndroidManifest.xml:60:13-55
+89
+90        <service
+90-->[com.google.firebase:firebase-analytics-ktx:21.5.1] /Users/dina/.gradle/caches/transforms-3/9162dad1ab56b28da566fe1e00028c64/transformed/firebase-analytics-ktx-21.5.1/AndroidManifest.xml:8:9-14:19
+91            android:name="com.google.firebase.components.ComponentDiscoveryService"
+91-->[com.google.firebase:firebase-analytics-ktx:21.5.1] /Users/dina/.gradle/caches/transforms-3/9162dad1ab56b28da566fe1e00028c64/transformed/firebase-analytics-ktx-21.5.1/AndroidManifest.xml:9:13-84
+92            android:directBootAware="true"
+92-->[com.google.firebase:firebase-common:20.4.2] /Users/dina/.gradle/caches/transforms-3/369d34091f18b15a16008b4904e27a9d/transformed/firebase-common-20.4.2/AndroidManifest.xml:32:13-43
+93            android:exported="false" >
+93-->[com.google.firebase:firebase-analytics-ktx:21.5.1] /Users/dina/.gradle/caches/transforms-3/9162dad1ab56b28da566fe1e00028c64/transformed/firebase-analytics-ktx-21.5.1/AndroidManifest.xml:10:13-37
+94            <meta-data
+94-->[com.google.firebase:firebase-analytics-ktx:21.5.1] /Users/dina/.gradle/caches/transforms-3/9162dad1ab56b28da566fe1e00028c64/transformed/firebase-analytics-ktx-21.5.1/AndroidManifest.xml:11:13-13:85
+95                android:name="com.google.firebase.components:com.google.firebase.analytics.ktx.FirebaseAnalyticsLegacyRegistrar"
+95-->[com.google.firebase:firebase-analytics-ktx:21.5.1] /Users/dina/.gradle/caches/transforms-3/9162dad1ab56b28da566fe1e00028c64/transformed/firebase-analytics-ktx-21.5.1/AndroidManifest.xml:12:17-129
+96                android:value="com.google.firebase.components.ComponentRegistrar" />
+96-->[com.google.firebase:firebase-analytics-ktx:21.5.1] /Users/dina/.gradle/caches/transforms-3/9162dad1ab56b28da566fe1e00028c64/transformed/firebase-analytics-ktx-21.5.1/AndroidManifest.xml:13:17-82
+97            <meta-data
+97-->[com.google.firebase:firebase-firestore-ktx:24.10.2] /Users/dina/.gradle/caches/transforms-3/bd3d7e05b550992e6a54e9740d20d6b1/transformed/firebase-firestore-ktx-24.10.2/AndroidManifest.xml:12:13-14:85
+98                android:name="com.google.firebase.components:com.google.firebase.firestore.ktx.FirebaseFirestoreLegacyRegistrar"
+98-->[com.google.firebase:firebase-firestore-ktx:24.10.2] /Users/dina/.gradle/caches/transforms-3/bd3d7e05b550992e6a54e9740d20d6b1/transformed/firebase-firestore-ktx-24.10.2/AndroidManifest.xml:13:17-129
+99                android:value="com.google.firebase.components.ComponentRegistrar" />
+99-->[com.google.firebase:firebase-firestore-ktx:24.10.2] /Users/dina/.gradle/caches/transforms-3/bd3d7e05b550992e6a54e9740d20d6b1/transformed/firebase-firestore-ktx-24.10.2/AndroidManifest.xml:14:17-82
+100            <meta-data
+100-->[com.google.firebase:firebase-firestore:24.10.2] /Users/dina/.gradle/caches/transforms-3/84004a7a18d7f2debe7cf5e936a42675/transformed/firebase-firestore-24.10.2/AndroidManifest.xml:17:13-19:85
+101                android:name="com.google.firebase.components:com.google.firebase.firestore.FirebaseFirestoreKtxRegistrar"
+101-->[com.google.firebase:firebase-firestore:24.10.2] /Users/dina/.gradle/caches/transforms-3/84004a7a18d7f2debe7cf5e936a42675/transformed/firebase-firestore-24.10.2/AndroidManifest.xml:18:17-122
+102                android:value="com.google.firebase.components.ComponentRegistrar" />
+102-->[com.google.firebase:firebase-firestore:24.10.2] /Users/dina/.gradle/caches/transforms-3/84004a7a18d7f2debe7cf5e936a42675/transformed/firebase-firestore-24.10.2/AndroidManifest.xml:19:17-82
+103            <meta-data
+103-->[com.google.firebase:firebase-firestore:24.10.2] /Users/dina/.gradle/caches/transforms-3/84004a7a18d7f2debe7cf5e936a42675/transformed/firebase-firestore-24.10.2/AndroidManifest.xml:20:13-22:85
+104                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+104-->[com.google.firebase:firebase-firestore:24.10.2] /Users/dina/.gradle/caches/transforms-3/84004a7a18d7f2debe7cf5e936a42675/transformed/firebase-firestore-24.10.2/AndroidManifest.xml:21:17-111
+105                android:value="com.google.firebase.components.ComponentRegistrar" />
+105-->[com.google.firebase:firebase-firestore:24.10.2] /Users/dina/.gradle/caches/transforms-3/84004a7a18d7f2debe7cf5e936a42675/transformed/firebase-firestore-24.10.2/AndroidManifest.xml:22:17-82
+106            <meta-data
+106-->[com.google.android.gms:play-services-measurement-api:21.5.1] /Users/dina/.gradle/caches/transforms-3/58956935b9eee892fea99ed7efa0d5ba/transformed/play-services-measurement-api-21.5.1/AndroidManifest.xml:37:13-39:85
+107                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+107-->[com.google.android.gms:play-services-measurement-api:21.5.1] /Users/dina/.gradle/caches/transforms-3/58956935b9eee892fea99ed7efa0d5ba/transformed/play-services-measurement-api-21.5.1/AndroidManifest.xml:38:17-139
+108                android:value="com.google.firebase.components.ComponentRegistrar" />
+108-->[com.google.android.gms:play-services-measurement-api:21.5.1] /Users/dina/.gradle/caches/transforms-3/58956935b9eee892fea99ed7efa0d5ba/transformed/play-services-measurement-api-21.5.1/AndroidManifest.xml:39:17-82
+109            <meta-data
+109-->[com.google.firebase:firebase-installations:17.2.0] /Users/dina/.gradle/caches/transforms-3/c1572652ac0b3af61b3132a93d6fa390/transformed/firebase-installations-17.2.0/AndroidManifest.xml:15:13-17:85
+110                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsKtxRegistrar"
+110-->[com.google.firebase:firebase-installations:17.2.0] /Users/dina/.gradle/caches/transforms-3/c1572652ac0b3af61b3132a93d6fa390/transformed/firebase-installations-17.2.0/AndroidManifest.xml:16:17-130
+111                android:value="com.google.firebase.components.ComponentRegistrar" />
+111-->[com.google.firebase:firebase-installations:17.2.0] /Users/dina/.gradle/caches/transforms-3/c1572652ac0b3af61b3132a93d6fa390/transformed/firebase-installations-17.2.0/AndroidManifest.xml:17:17-82
+112            <meta-data
+112-->[com.google.firebase:firebase-installations:17.2.0] /Users/dina/.gradle/caches/transforms-3/c1572652ac0b3af61b3132a93d6fa390/transformed/firebase-installations-17.2.0/AndroidManifest.xml:18:13-20:85
+113                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+113-->[com.google.firebase:firebase-installations:17.2.0] /Users/dina/.gradle/caches/transforms-3/c1572652ac0b3af61b3132a93d6fa390/transformed/firebase-installations-17.2.0/AndroidManifest.xml:19:17-127
+114                android:value="com.google.firebase.components.ComponentRegistrar" />
+114-->[com.google.firebase:firebase-installations:17.2.0] /Users/dina/.gradle/caches/transforms-3/c1572652ac0b3af61b3132a93d6fa390/transformed/firebase-installations-17.2.0/AndroidManifest.xml:20:17-82
+115            <meta-data
+115-->[com.google.firebase:firebase-common-ktx:20.4.2] /Users/dina/.gradle/caches/transforms-3/9df3ab9c09cd7d137f611c8b70248562/transformed/firebase-common-ktx-20.4.2/AndroidManifest.xml:12:13-14:85
+116                android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonLegacyRegistrar"
+116-->[com.google.firebase:firebase-common-ktx:20.4.2] /Users/dina/.gradle/caches/transforms-3/9df3ab9c09cd7d137f611c8b70248562/transformed/firebase-common-ktx-20.4.2/AndroidManifest.xml:13:17-116
+117                android:value="com.google.firebase.components.ComponentRegistrar" />
+117-->[com.google.firebase:firebase-common-ktx:20.4.2] /Users/dina/.gradle/caches/transforms-3/9df3ab9c09cd7d137f611c8b70248562/transformed/firebase-common-ktx-20.4.2/AndroidManifest.xml:14:17-82
+118            <meta-data
+118-->[com.google.firebase:firebase-common:20.4.2] /Users/dina/.gradle/caches/transforms-3/369d34091f18b15a16008b4904e27a9d/transformed/firebase-common-20.4.2/AndroidManifest.xml:35:13-37:85
+119                android:name="com.google.firebase.components:com.google.firebase.FirebaseCommonKtxRegistrar"
+119-->[com.google.firebase:firebase-common:20.4.2] /Users/dina/.gradle/caches/transforms-3/369d34091f18b15a16008b4904e27a9d/transformed/firebase-common-20.4.2/AndroidManifest.xml:36:17-109
+120                android:value="com.google.firebase.components.ComponentRegistrar" />
+120-->[com.google.firebase:firebase-common:20.4.2] /Users/dina/.gradle/caches/transforms-3/369d34091f18b15a16008b4904e27a9d/transformed/firebase-common-20.4.2/AndroidManifest.xml:37:17-82
+121        </service>
+122
+123        <property
+123-->[com.google.android.gms:play-services-measurement-api:21.5.1] /Users/dina/.gradle/caches/transforms-3/58956935b9eee892fea99ed7efa0d5ba/transformed/play-services-measurement-api-21.5.1/AndroidManifest.xml:30:9-32:61
+124            android:name="android.adservices.AD_SERVICES_CONFIG"
+124-->[com.google.android.gms:play-services-measurement-api:21.5.1] /Users/dina/.gradle/caches/transforms-3/58956935b9eee892fea99ed7efa0d5ba/transformed/play-services-measurement-api-21.5.1/AndroidManifest.xml:31:13-65
+125            android:resource="@xml/ga_ad_services_config" />
+125-->[com.google.android.gms:play-services-measurement-api:21.5.1] /Users/dina/.gradle/caches/transforms-3/58956935b9eee892fea99ed7efa0d5ba/transformed/play-services-measurement-api-21.5.1/AndroidManifest.xml:32:13-58
+126
+127        <provider
+127-->[com.google.firebase:firebase-common:20.4.2] /Users/dina/.gradle/caches/transforms-3/369d34091f18b15a16008b4904e27a9d/transformed/firebase-common-20.4.2/AndroidManifest.xml:23:9-28:39
+128            android:name="com.google.firebase.provider.FirebaseInitProvider"
+128-->[com.google.firebase:firebase-common:20.4.2] /Users/dina/.gradle/caches/transforms-3/369d34091f18b15a16008b4904e27a9d/transformed/firebase-common-20.4.2/AndroidManifest.xml:24:13-77
+129            android:authorities="com.memorytag.app.firebaseinitprovider"
+129-->[com.google.firebase:firebase-common:20.4.2] /Users/dina/.gradle/caches/transforms-3/369d34091f18b15a16008b4904e27a9d/transformed/firebase-common-20.4.2/AndroidManifest.xml:25:13-72
+130            android:directBootAware="true"
+130-->[com.google.firebase:firebase-common:20.4.2] /Users/dina/.gradle/caches/transforms-3/369d34091f18b15a16008b4904e27a9d/transformed/firebase-common-20.4.2/AndroidManifest.xml:26:13-43
+131            android:exported="false"
+131-->[com.google.firebase:firebase-common:20.4.2] /Users/dina/.gradle/caches/transforms-3/369d34091f18b15a16008b4904e27a9d/transformed/firebase-common-20.4.2/AndroidManifest.xml:27:13-37
+132            android:initOrder="100" />
+132-->[com.google.firebase:firebase-common:20.4.2] /Users/dina/.gradle/caches/transforms-3/369d34091f18b15a16008b4904e27a9d/transformed/firebase-common-20.4.2/AndroidManifest.xml:28:13-36
+133
+134        <receiver
+134-->[com.google.android.gms:play-services-measurement:21.5.1] /Users/dina/.gradle/caches/transforms-3/fc3c4d6a25fac9cc8b2ed042a85140ba/transformed/play-services-measurement-21.5.1/AndroidManifest.xml:29:9-33:20
+135            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+135-->[com.google.android.gms:play-services-measurement:21.5.1] /Users/dina/.gradle/caches/transforms-3/fc3c4d6a25fac9cc8b2ed042a85140ba/transformed/play-services-measurement-21.5.1/AndroidManifest.xml:30:13-85
+136            android:enabled="true"
+136-->[com.google.android.gms:play-services-measurement:21.5.1] /Users/dina/.gradle/caches/transforms-3/fc3c4d6a25fac9cc8b2ed042a85140ba/transformed/play-services-measurement-21.5.1/AndroidManifest.xml:31:13-35
+137            android:exported="false" >
+137-->[com.google.android.gms:play-services-measurement:21.5.1] /Users/dina/.gradle/caches/transforms-3/fc3c4d6a25fac9cc8b2ed042a85140ba/transformed/play-services-measurement-21.5.1/AndroidManifest.xml:32:13-37
+138        </receiver>
+139
+140        <service
+140-->[com.google.android.gms:play-services-measurement:21.5.1] /Users/dina/.gradle/caches/transforms-3/fc3c4d6a25fac9cc8b2ed042a85140ba/transformed/play-services-measurement-21.5.1/AndroidManifest.xml:35:9-38:40
+141            android:name="com.google.android.gms.measurement.AppMeasurementService"
+141-->[com.google.android.gms:play-services-measurement:21.5.1] /Users/dina/.gradle/caches/transforms-3/fc3c4d6a25fac9cc8b2ed042a85140ba/transformed/play-services-measurement-21.5.1/AndroidManifest.xml:36:13-84
+142            android:enabled="true"
+142-->[com.google.android.gms:play-services-measurement:21.5.1] /Users/dina/.gradle/caches/transforms-3/fc3c4d6a25fac9cc8b2ed042a85140ba/transformed/play-services-measurement-21.5.1/AndroidManifest.xml:37:13-35
+143            android:exported="false" />
+143-->[com.google.android.gms:play-services-measurement:21.5.1] /Users/dina/.gradle/caches/transforms-3/fc3c4d6a25fac9cc8b2ed042a85140ba/transformed/play-services-measurement-21.5.1/AndroidManifest.xml:38:13-37
+144        <service
+144-->[com.google.android.gms:play-services-measurement:21.5.1] /Users/dina/.gradle/caches/transforms-3/fc3c4d6a25fac9cc8b2ed042a85140ba/transformed/play-services-measurement-21.5.1/AndroidManifest.xml:39:9-43:72
+145            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+145-->[com.google.android.gms:play-services-measurement:21.5.1] /Users/dina/.gradle/caches/transforms-3/fc3c4d6a25fac9cc8b2ed042a85140ba/transformed/play-services-measurement-21.5.1/AndroidManifest.xml:40:13-87
+146            android:enabled="true"
+146-->[com.google.android.gms:play-services-measurement:21.5.1] /Users/dina/.gradle/caches/transforms-3/fc3c4d6a25fac9cc8b2ed042a85140ba/transformed/play-services-measurement-21.5.1/AndroidManifest.xml:41:13-35
+147            android:exported="false"
+147-->[com.google.android.gms:play-services-measurement:21.5.1] /Users/dina/.gradle/caches/transforms-3/fc3c4d6a25fac9cc8b2ed042a85140ba/transformed/play-services-measurement-21.5.1/AndroidManifest.xml:42:13-37
+148            android:permission="android.permission.BIND_JOB_SERVICE" />
+148-->[com.google.android.gms:play-services-measurement:21.5.1] /Users/dina/.gradle/caches/transforms-3/fc3c4d6a25fac9cc8b2ed042a85140ba/transformed/play-services-measurement-21.5.1/AndroidManifest.xml:43:13-69
+149
+150        <provider
+150-->[androidx.emoji2:emoji2:1.2.0] /Users/dina/.gradle/caches/transforms-3/13d61424835f2855b78a74b1c1c07aaf/transformed/emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+151            android:name="androidx.startup.InitializationProvider"
+151-->[androidx.emoji2:emoji2:1.2.0] /Users/dina/.gradle/caches/transforms-3/13d61424835f2855b78a74b1c1c07aaf/transformed/emoji2-1.2.0/AndroidManifest.xml:25:13-67
+152            android:authorities="com.memorytag.app.androidx-startup"
+152-->[androidx.emoji2:emoji2:1.2.0] /Users/dina/.gradle/caches/transforms-3/13d61424835f2855b78a74b1c1c07aaf/transformed/emoji2-1.2.0/AndroidManifest.xml:26:13-68
+153            android:exported="false" >
+153-->[androidx.emoji2:emoji2:1.2.0] /Users/dina/.gradle/caches/transforms-3/13d61424835f2855b78a74b1c1c07aaf/transformed/emoji2-1.2.0/AndroidManifest.xml:27:13-37
+154            <meta-data
+154-->[androidx.emoji2:emoji2:1.2.0] /Users/dina/.gradle/caches/transforms-3/13d61424835f2855b78a74b1c1c07aaf/transformed/emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+155                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+155-->[androidx.emoji2:emoji2:1.2.0] /Users/dina/.gradle/caches/transforms-3/13d61424835f2855b78a74b1c1c07aaf/transformed/emoji2-1.2.0/AndroidManifest.xml:30:17-75
+156                android:value="androidx.startup" />
+156-->[androidx.emoji2:emoji2:1.2.0] /Users/dina/.gradle/caches/transforms-3/13d61424835f2855b78a74b1c1c07aaf/transformed/emoji2-1.2.0/AndroidManifest.xml:31:17-49
+157            <meta-data
+157-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/dina/.gradle/caches/transforms-3/adf9719f38abba58270c5c6de4169734/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:29:13-31:52
+158                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+158-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/dina/.gradle/caches/transforms-3/adf9719f38abba58270c5c6de4169734/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:30:17-78
+159                android:value="androidx.startup" />
+159-->[androidx.lifecycle:lifecycle-process:2.7.0] /Users/dina/.gradle/caches/transforms-3/adf9719f38abba58270c5c6de4169734/transformed/lifecycle-process-2.7.0/AndroidManifest.xml:31:17-49
+160            <meta-data
+160-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dina/.gradle/caches/transforms-3/2a0401c71ec21fc8f90c4193433158d1/transformed/profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
+161                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+161-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dina/.gradle/caches/transforms-3/2a0401c71ec21fc8f90c4193433158d1/transformed/profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
+162                android:value="androidx.startup" />
+162-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dina/.gradle/caches/transforms-3/2a0401c71ec21fc8f90c4193433158d1/transformed/profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
+163        </provider>
+164
+165        <activity
+165-->[com.google.android.gms:play-services-base:18.0.1] /Users/dina/.gradle/caches/transforms-3/bcf30a09a3a1d24f4bd70dcb9bfd46c8/transformed/play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
+166            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+166-->[com.google.android.gms:play-services-base:18.0.1] /Users/dina/.gradle/caches/transforms-3/bcf30a09a3a1d24f4bd70dcb9bfd46c8/transformed/play-services-base-18.0.1/AndroidManifest.xml:20:19-85
+167            android:exported="false"
+167-->[com.google.android.gms:play-services-base:18.0.1] /Users/dina/.gradle/caches/transforms-3/bcf30a09a3a1d24f4bd70dcb9bfd46c8/transformed/play-services-base-18.0.1/AndroidManifest.xml:22:19-43
+168            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+168-->[com.google.android.gms:play-services-base:18.0.1] /Users/dina/.gradle/caches/transforms-3/bcf30a09a3a1d24f4bd70dcb9bfd46c8/transformed/play-services-base-18.0.1/AndroidManifest.xml:21:19-78
+169
+170        <uses-library
+170-->[androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /Users/dina/.gradle/caches/transforms-3/7089316901a387f2f8735c82d8c12a68/transformed/ads-adservices-1.0.0-beta05/AndroidManifest.xml:23:9-25:40
+171            android:name="android.ext.adservices"
+171-->[androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /Users/dina/.gradle/caches/transforms-3/7089316901a387f2f8735c82d8c12a68/transformed/ads-adservices-1.0.0-beta05/AndroidManifest.xml:24:13-50
+172            android:required="false" />
+172-->[androidx.privacysandbox.ads:ads-adservices:1.0.0-beta05] /Users/dina/.gradle/caches/transforms-3/7089316901a387f2f8735c82d8c12a68/transformed/ads-adservices-1.0.0-beta05/AndroidManifest.xml:25:13-37
+173
+174        <meta-data
+174-->[com.google.android.gms:play-services-basement:18.1.0] /Users/dina/.gradle/caches/transforms-3/aa97675b43ebf06f42440d1aaec8e7d8/transformed/play-services-basement-18.1.0/AndroidManifest.xml:21:9-23:69
+175            android:name="com.google.android.gms.version"
+175-->[com.google.android.gms:play-services-basement:18.1.0] /Users/dina/.gradle/caches/transforms-3/aa97675b43ebf06f42440d1aaec8e7d8/transformed/play-services-basement-18.1.0/AndroidManifest.xml:22:13-58
+176            android:value="@integer/google_play_services_version" />
+176-->[com.google.android.gms:play-services-basement:18.1.0] /Users/dina/.gradle/caches/transforms-3/aa97675b43ebf06f42440d1aaec8e7d8/transformed/play-services-basement-18.1.0/AndroidManifest.xml:23:13-66
+177
+178        <receiver
+178-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dina/.gradle/caches/transforms-3/2a0401c71ec21fc8f90c4193433158d1/transformed/profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
+179            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+179-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dina/.gradle/caches/transforms-3/2a0401c71ec21fc8f90c4193433158d1/transformed/profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
+180            android:directBootAware="false"
+180-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dina/.gradle/caches/transforms-3/2a0401c71ec21fc8f90c4193433158d1/transformed/profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
+181            android:enabled="true"
+181-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dina/.gradle/caches/transforms-3/2a0401c71ec21fc8f90c4193433158d1/transformed/profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
+182            android:exported="true"
+182-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dina/.gradle/caches/transforms-3/2a0401c71ec21fc8f90c4193433158d1/transformed/profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
+183            android:permission="android.permission.DUMP" >
+183-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dina/.gradle/caches/transforms-3/2a0401c71ec21fc8f90c4193433158d1/transformed/profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
+184            <intent-filter>
+184-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dina/.gradle/caches/transforms-3/2a0401c71ec21fc8f90c4193433158d1/transformed/profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
+185                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+185-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dina/.gradle/caches/transforms-3/2a0401c71ec21fc8f90c4193433158d1/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
+185-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dina/.gradle/caches/transforms-3/2a0401c71ec21fc8f90c4193433158d1/transformed/profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
+186            </intent-filter>
+187            <intent-filter>
+187-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dina/.gradle/caches/transforms-3/2a0401c71ec21fc8f90c4193433158d1/transformed/profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
+188                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+188-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dina/.gradle/caches/transforms-3/2a0401c71ec21fc8f90c4193433158d1/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
+188-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dina/.gradle/caches/transforms-3/2a0401c71ec21fc8f90c4193433158d1/transformed/profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
+189            </intent-filter>
+190            <intent-filter>
+190-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dina/.gradle/caches/transforms-3/2a0401c71ec21fc8f90c4193433158d1/transformed/profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
+191                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+191-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dina/.gradle/caches/transforms-3/2a0401c71ec21fc8f90c4193433158d1/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
+191-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dina/.gradle/caches/transforms-3/2a0401c71ec21fc8f90c4193433158d1/transformed/profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
+192            </intent-filter>
+193            <intent-filter>
+193-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dina/.gradle/caches/transforms-3/2a0401c71ec21fc8f90c4193433158d1/transformed/profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
+194                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+194-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dina/.gradle/caches/transforms-3/2a0401c71ec21fc8f90c4193433158d1/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
+194-->[androidx.profileinstaller:profileinstaller:1.3.0] /Users/dina/.gradle/caches/transforms-3/2a0401c71ec21fc8f90c4193433158d1/transformed/profileinstaller-1.3.0/AndroidManifest.xml:50:25-92
+195            </intent-filter>
+196        </receiver>
+197    </application>
+198
+199</manifest>

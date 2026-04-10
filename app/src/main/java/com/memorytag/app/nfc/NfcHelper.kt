@@ -62,14 +62,11 @@ class NfcHelper(private val activity: Activity) {
      * 2. Sinon → utilise l'UID hardware du tag (converti en hex)
      */
     fun extractMemoryId(intent: Intent): String? {
-    /*    return when (intent.action) {
+        return when (intent.action) {
             NfcAdapter.ACTION_NDEF_DISCOVERED -> extractFromNdef(intent)
             NfcAdapter.ACTION_TAG_DISCOVERED -> extractFromTagUid(intent)
             else -> null
-        }*/
-
-        extractFromNdef(intent)?.let { return it.trim() }
-        return extractFromTagUid(intent)?.trim()
+        }
     }
 
     /**
@@ -83,24 +80,13 @@ class NfcHelper(private val activity: Activity) {
         val ndefMessage = rawMessages[0] as? NdefMessage ?: return null
         val record = ndefMessage.records.firstOrNull() ?: return null
 
-        val payloadBytes = record.payload
-
         // Décode le payload NDEF en UTF-8
-        val payload = try {
-            val statusByte = payloadBytes[0].toInt()
-            val languageCodeLength = statusByte and 0x3F
-            String(
-                payloadBytes,
-                1 + languageCodeLength,
-                payloadBytes.size - 1 - languageCodeLength,
-                Charsets.UTF_8
-            )
-        } catch (e: Exception) {
-            String(payloadBytes, Charsets.UTF_8)
-        }
+        val payload = String(record.payload, Charsets.UTF_8)
+
         // Extrait l'ID depuis une URL du type : https://memorytag.app/memory/PARIS_001
         return when {
             payload.contains("/memory/") -> payload.substringAfterLast("/memory/").trim()
+            payload.startsWith("en") -> payload.substring(3) // Format NDEF URI standard
             else -> payload.trim()
         }
     }

@@ -43,13 +43,19 @@ class MainActivity : AppCompatActivity() {
         } else if (!nfcHelper.isNfcEnabled) {
             binding.nfcStatusText.text = "Activez le NFC dans les paramètres"
         }
+
+        // Bouton debug : charge un mock sans tag NFC
         binding.debugButton.setOnClickListener {
             vibrateSuccess()
             viewModel.loadMemory("PARIS_001")
         }
+
+        // ── NOUVEAU : Bouton "Créer un souvenir" ─────────────────────────────
+        binding.createMemoryButton.setOnClickListener {
+            startActivity(Intent(this, CreateMemoryActivity::class.java))
+        }
     }
 
-    // 3 anneaux concentriques avec délais décalés — effet onde NFC
     private fun startPulseAnimation() {
         animateRing(binding.ring1, 0L)
         animateRing(binding.ring2, 400L)
@@ -84,14 +90,13 @@ class MainActivity : AppCompatActivity() {
                             )
                             viewModel.resetState()
                         }
-                        is MemoryUiState.Error   -> showErrorState(state.message)
+                        is MemoryUiState.Error -> showErrorState(state.message)
                     }
                 }
             }
         }
     }
 
-    // Double impulsion haptique douce — feeling "tag reconnu"
     private fun vibrateSuccess() {
         try {
             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.S) {

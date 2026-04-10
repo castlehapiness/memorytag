@@ -1,45 +1,92 @@
 package com.memorytag.app.data.repository
 
+import com.google.firebase.firestore.FirebaseFirestore
 import com.memorytag.app.data.model.Memory
 import android.util.Log
-import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.coroutines.tasks.await
 
 
 /**
- * Repository des souvenirs.
- * Abstrait la source de données (API réelle ou mock).
- * En production : remplacer fetchMemory() par un appel Retrofit.
+ * Repository unique pour toutes les opérations sur les souvenirs.
+ *
+ * Stratégie de lecture :
+ *   1. Cherche dans Firestore (collection "memories", document = memoryId)
+ *   2. Si le document n'existe pas → retombe sur le mock local
+ *
+ * Ainsi le mock Paris/Kyoto continue de fonctionner pendant le dev,
+ * et les vrais souvenirs créés via CreateMemoryActivity sont aussi lisibles.
  */
-class MemoryRepository(
-    private val firestore: FirebaseFirestore = FirebaseFirestore.getInstance()
-) {
+class MemoryRepository {
+
+    // Instance Firestore — singleton géré par le SDK Firebase
+    private val db = FirebaseFirestore.getInstance()
+
+    // Référence à la collection "memories" dans Firestore
+    private val memoriesCollection = db.collection("memories")
+
+    // ── READ ─────────────────────────────────────────────────────────────────
 
     /**
-     * Récupère un souvenir par son ID (lu depuis le tag NFC).
-     * Simule un délai réseau de 800ms pour le mock.
+     * Charge un souvenir par son ID.
+     * Cherche d'abord dans Firestore, puis dans le mock local en fallback.
+     *
+     * @param memoryId ID du document Firestore (ex: UUID ou "PARIS_001")
+     * @throws Exception si Firestore échoue ET que le mock ne contient pas l'ID
      */
     suspend fun fetchMemory(memoryId: String): Memory {
-        val normalizedId = memoryId.trim().uppercase()
-        Log.d("MEMORY_DEBUG", "memoryId brut='$memoryId' | normalisé='$normalizedId'")
+        return try {
+            val doc = memoriesCollection.document(memoryId).get().await()
 
-        val snapshot = firestore
-            .collection("memories")
-            .document(normalizedId)
-            .get()
-            .await()
-
-        return snapshot.toObject(Memory::class.java)
-            ?: throw IllegalArgumentException("Aucun souvenir trouvé pour l'id: '$normalizedId'")
-
-       /* // --- MOCK DATA ---
-        // En production, remplacer par : apiService.getMemory(memoryId)
-        return getMockMemory(normalizedId)*/
+            if (doc.exists()) {
+                // Désérialisation automatique Firestore → Memory
+                // Requiert les valeurs par défaut dans la data class
+                doc.toObject(Memory::class.java)
+                    ?: throw Exception("Erreur de désérialisation")
+            } else {
+                // Document absent → fallback mock (utile en dev)
+                getMockMemory(memoryId)
+            }
+        } catch (e: Exception) {
+            // Si Firestore est inaccessible (pas de réseau), fallback mock
+            getMockMemory(memoryId)
+        }
     }
 
+    // ── WRITE ────────────────────────────────────────────────────────────────
+
     /**
-     * Données de démonstration.
-     * Utilise des images Unsplash libres de droits.
+     * Crée un nouveau souvenir dans Firestore.
+     *
+     * Le document est créé avec l'ID défini dans memory.id.
+     * Utilisation : CoroutineScope (viewModelScope) via suspend + await().
+     *
+     * Structure Firestore créée :
+     * memories/
+     *   {memory.id}/
+     *     id: "..."
+     *     title: "..."
+     *     location: "..."
+     *     latitude: 0.0
+     *     longitude: 0.0
+     *     description: "..."
+     *     date: ""
+     *     photos: []
+     *
+     * @param memory L'objet Memory à persister
+     * @throws Exception si l'écriture Firestore échoue
+     */
+    suspend fun createMemory(memory: Memory) {
+        memoriesCollection
+            .document(memory.id)  // ID explicite = l'UUID généré dans le ViewModel
+            .set(memory)          // set() crée ou écrase le document
+            .await()              // Suspend jusqu'à la confirmation Firestore
+    }
+
+    // ── MOCK LOCAL ───────────────────────────────────────────────────────────
+
+    /**
+     * Données de démonstration — reste actif tant que Firestore n'a pas
+     * ces IDs, et sert de fallback hors-ligne.
      */
     private fun getMockMemory(id: String): Memory {
         val mockDatabase = mapOf(
@@ -74,8 +121,6 @@ class MemoryRepository(
                 )
             )
         )
-
-        // Retourne le mock correspondant, ou une erreur
-        return mockDatabase[id]
-            ?: throw IllegalArgumentException("Aucun souvenir trouvé pour l'id: '$id'")    }
+        return mockDatabase[id] ?: throw Exception("Souvenir introuvable : $id")
+    }
 }

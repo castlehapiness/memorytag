@@ -18,44 +18,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- Icône NFC + anneaux -->
+        <!-- Icône NFC + 3 anneaux pulse -->
         <FrameLayout
             android:id="@+id/nfcIconContainer"
             android:layout_width="160dp"
             android:layout_height="160dp"
             android:layout_gravity="center">
 
-            <!-- Anneau 3 — le plus externe -->
-            <View
-                android:id="@+id/ring3"
-                android:layout_width="140dp"
-                android:layout_height="140dp"
+            <View android:id="@+id/ring3"
+                android:layout_width="140dp" android:layout_height="140dp"
                 android:layout_gravity="center"
-                android:background="@drawable/ring_pulse"
-                android:alpha="0"/>
-
-            <!-- Anneau 2 -->
-            <View
-                android:id="@+id/ring2"
-                android:layout_width="110dp"
-                android:layout_height="110dp"
+                android:background="@drawable/ring_pulse" android:alpha="0"/>
+            <View android:id="@+id/ring2"
+                android:layout_width="110dp" android:layout_height="110dp"
                 android:layout_gravity="center"
-                android:background="@drawable/ring_pulse"
-                android:alpha="0"/>
-
-            <!-- Anneau 1 — le plus proche de l'icône -->
-            <View
-                android:id="@+id/ring1"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:background="@drawable/ring_pulse" android:alpha="0"/>
+            <View android:id="@+id/ring1"
+                android:layout_width="80dp" android:layout_height="80dp"
                 android:layout_gravity="center"
-                android:background="@drawable/ring_pulse"
-                android:alpha="0"/>
+                android:background="@drawable/ring_pulse" android:alpha="0"/>
 
-            <!-- Icône centrale -->
             <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="56dp"
-                android:layout_height="56dp"
+                android:layout_width="56dp" android:layout_height="56dp"
                 android:layout_gravity="center"
                 android:padding="14dp"
                 android:background="@drawable/circle_white"
@@ -64,44 +48,34 @@
         </FrameLayout>
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
             android:layout_marginTop="36dp"
             android:text="Approchez votre tag"
-            android:textColor="#F5F5F5"
-            android:textSize="24sp"
-            android:fontFamily="sans-serif-medium"
-            android:letterSpacing="-0.01"/>
+            android:textColor="#F5F5F5" android:textSize="24sp"
+            android:fontFamily="sans-serif-medium" android:letterSpacing="-0.01"/>
 
         <TextView
             android:id="@+id/nfcStatusText"
-            android:layout_width="260dp"
-            android:layout_height="wrap_content"
+            android:layout_width="260dp" android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="Scannez un tag NFC pour\nrevivre ce moment"
-            android:textColor="#555555"
-            android:textSize="15sp"
-            android:gravity="center"
-            android:lineSpacingMultiplier="1.5"/>
+            android:textColor="#555555" android:textSize="15sp"
+            android:gravity="center" android:lineSpacingMultiplier="1.5"/>
 
         <TextView
             android:id="@+id/errorText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
             android:layout_marginTop="18dp"
             android:visibility="gone"
-            android:textColor="#FF453A"
-            android:textSize="13sp"
+            android:textColor="#FF453A" android:textSize="13sp"
             android:gravity="center"/>
     </LinearLayout>
 
     <!-- Groupe LOADING -->
     <LinearLayout
         android:id="@+id/loadingGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:orientation="vertical" android:gravity="center"
         android:visibility="gone"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -109,34 +83,47 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <ProgressBar
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:indeterminate="true"
-            android:indeterminateTint="#FFFFFF"/>
-
+            android:layout_width="36dp" android:layout_height="36dp"
+            android:indeterminate="true" android:indeterminateTint="#FFFFFF"/>
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
             android:layout_marginTop="18dp"
             android:text="Chargement du souvenir…"
-            android:textColor="#555555"
-            android:textSize="14sp"/>
+            android:textColor="#555555" android:textSize="14sp"/>
     </LinearLayout>
 
-    <!-- Bouton debug -->
+    <!-- ── BOUTONS BAS D'ÉCRAN ─────────────────────────────────────────── -->
+
+    <!-- Bouton "Créer un souvenir" — principal, bien visible -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/createMemoryButton"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="80dp"
+        android:text="+ Créer un souvenir"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:fontFamily="sans-serif-medium"
+        app:backgroundTint="@color/surface_mid"
+        app:cornerRadius="26dp"
+        app:strokeColor="@color/stroke_mid"
+        app:strokeWidth="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Bouton debug (discret) -->
     <TextView
         android:id="@+id/debugButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
         android:layout_marginBottom="44dp"
         android:text="Simuler un scan NFC"
-        android:textColor="#2A2A2A"
-        android:textSize="12sp"
-        android:letterSpacing="0.08"
-        android:padding="12dp"
-        android:clickable="true"
-        android:focusable="true"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="#1E1E1E" android:textSize="12sp"
+        android:letterSpacing="0.06" android:padding="12dp"
+        android:clickable="true" android:focusable="true"
+        app:layout_constraintBottom_toTopOf="@id/createMemoryButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 

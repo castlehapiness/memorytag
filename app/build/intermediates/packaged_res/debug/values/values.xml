@@ -3,9 +3,23 @@
     <color name="accent_red">#FFFF3B30</color>
     <color name="background_dark">#FF080808</color>
     <color name="black">#FF000000</color>
+    <color name="button_red">#FFFF453A</color>
+    <color name="ripple_white">#40FFFFFF</color>
+    <color name="stroke_dark">#FF222222</color>
+    <color name="stroke_mid">#FF252525</color>
+    <color name="surface_dark">#FF0F0F0F</color>
+    <color name="surface_mid">#FF161616</color>
+    <color name="text_dim">#FF333333</color>
+    <color name="text_hint">#FF555555</color>
     <color name="text_secondary">#FF808080</color>
     <color name="white">#FFFFFFFF</color>
     <string name="app_name">MemoryTag</string>
+    <string name="gcm_defaultSenderId" translatable="false">551691737864</string>
+    <string name="google_api_key" translatable="false">AIzaSyDYNwu_ftUyA6fOPD8QiLVPtwIrdMiIVbs</string>
+    <string name="google_app_id" translatable="false">1:551691737864:android:c7b56b3d89ebbee1edaabd</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDYNwu_ftUyA6fOPD8QiLVPtwIrdMiIVbs</string>
+    <string name="google_storage_bucket" translatable="false">memorytag-d8043.firebasestorage.app</string>
+    <string name="project_id" translatable="false">memorytag-d8043</string>
     <style name="Theme.MemoryTag" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">#FF3B30</item>
         <item name="colorPrimaryVariant">#CC2200</item>

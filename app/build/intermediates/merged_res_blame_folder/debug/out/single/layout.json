@@ -1,18 +1,22 @@
 [
     {
-        "merged": "com.memorytag.app-mergeDebugResources-37:/layout/activity_memory_detail.xml",
-        "source": "com.memorytag.app-main-40:/layout/activity_memory_detail.xml"
+        "merged": "com.memorytag.app-mergeDebugResources-44:/layout/activity_memory_detail.xml",
+        "source": "com.memorytag.app-main-47:/layout/activity_memory_detail.xml"
     },
     {
-        "merged": "com.memorytag.app-mergeDebugResources-37:/layout/activity_main.xml",
-        "source": "com.memorytag.app-main-40:/layout/activity_main.xml"
+        "merged": "com.memorytag.app-mergeDebugResources-44:/layout/activity_main.xml",
+        "source": "com.memorytag.app-main-47:/layout/activity_main.xml"
     },
     {
-        "merged": "com.memorytag.app-mergeDebugResources-37:/layout/item_thumbnail.xml",
-        "source": "com.memorytag.app-main-40:/layout/item_thumbnail.xml"
+        "merged": "com.memorytag.app-mergeDebugResources-44:/layout/item_photo_pager.xml",
+        "source": "com.memorytag.app-main-47:/layout/item_photo_pager.xml"
     },
     {
-        "merged": "com.memorytag.app-mergeDebugResources-37:/layout/item_photo_pager.xml",
-        "source": "com.memorytag.app-main-40:/layout/item_photo_pager.xml"
+        "merged": "com.memorytag.app-mergeDebugResources-44:/layout/activity_create_memory.xml",
+        "source": "com.memorytag.app-main-47:/layout/activity_create_memory.xml"
+    },
+    {
+        "merged": "com.memorytag.app-mergeDebugResources-44:/layout/item_thumbnail.xml",
+        "source": "com.memorytag.app-main-47:/layout/item_thumbnail.xml"
     }
 ]
