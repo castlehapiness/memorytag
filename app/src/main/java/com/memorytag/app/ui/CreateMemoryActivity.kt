@@ -49,8 +49,6 @@ class CreateMemoryActivity : AppCompatActivity() {
                 location    = binding.locationInput.text.toString(),
                 description = binding.descriptionInput.text.toString(),
                 date        = binding.dateInput.text.toString(),
-                latitude    = binding.latitudeInput.text.toString(),
-                longitude   = binding.longitudeInput.text.toString(),
                 photosRaw   = binding.photosInput.text.toString()
             )
         }
@@ -112,6 +110,19 @@ class CreateMemoryActivity : AppCompatActivity() {
                 }
             }
         }
+
+        // Observer les coordonnées géocodées
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.coords.collect { coords ->
+                    if (coords != null) {
+                        binding.coordsContainer.visibility = View.VISIBLE
+                        binding.coordsText.text =
+                            "%.4f, %.4f".format(coords.first, coords.second)
+                    }
+                }
+            }
+        }
     }
 
     private fun onCreationSuccess(memoryId: String) {
@@ -157,8 +168,6 @@ class CreateMemoryActivity : AppCompatActivity() {
         binding.locationInput.isEnabled     = enabled
         binding.descriptionInput.isEnabled  = enabled
         binding.dateInput.isEnabled         = enabled
-        binding.latitudeInput.isEnabled     = enabled
-        binding.longitudeInput.isEnabled    = enabled
         binding.photosInput.isEnabled       = enabled
         binding.createButton.isEnabled      = enabled
         binding.loadingIndicator.visibility = if (enabled) View.GONE else View.VISIBLE

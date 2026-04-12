@@ -29,6 +29,8 @@ drawable ripple_circle_mid
 drawable ripple_circle_outer
 id backButton
 id buttonContainer
+id coordsContainer
+id coordsText
 id createButton
 id createMemoryButton
 id createdIdContainer
@@ -45,14 +47,12 @@ id globeLocationLabel
 id globeSection
 id globeView
 id idleGroup
-id latitudeInput
 id loadingGroup
 id loadingIndicator
 id loadingView
 id locationInput
 id locationRow
 id locationText
-id longitudeInput
 id nfcIconContainer
 id nfcStatusText
 id nfcWritePrompt

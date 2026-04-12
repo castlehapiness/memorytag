@@ -238,77 +238,31 @@
                     android:maxLines="1"/>
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!-- ═══ COORDONNÉES GPS (optionnel) ══════════════════════════ -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="COORDONNÉES GPS"
-                android:textColor="#3A3A3A"
-                android:textSize="10sp"
-                android:letterSpacing="0.15"
-                android:fontFamily="sans-serif-medium"
-                android:layout_marginTop="24dp"
-                android:layout_marginBottom="8dp"/>
-
-            <!-- Latitude + Longitude côte à côte -->
+            <!-- Indicateur coordonnées auto-détectées -->
             <LinearLayout
+                android:id="@+id/coordsContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="12dp"
+                android:visibility="gone">
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="0dp"
+                <ImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:src="@drawable/ic_location_pin"
+                    android:tint="#34C759"/>
+
+                <TextView
+                    android:id="@+id/coordsText"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginEnd="8dp"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    app:boxStrokeColor="@color/stroke_dark"
-                    app:boxBackgroundColor="@color/surface_dark"
-                    app:hintTextColor="@color/text_hint">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/latitudeInput"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Latitude"
-                        android:textColor="#F2F2F2"
-                        android:textColorHint="#333333"
-                        android:textSize="14sp"
-                        android:inputType="numberDecimal|numberSigned"
-                        android:maxLines="1"/>
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginStart="8dp"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                    app:boxStrokeColor="@color/stroke_dark"
-                    app:boxBackgroundColor="@color/surface_dark"
-                    app:hintTextColor="@color/text_hint">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/longitudeInput"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Longitude"
-                        android:textColor="#F2F2F2"
-                        android:textColorHint="#333333"
-                        android:textSize="14sp"
-                        android:inputType="numberDecimal|numberSigned"
-                        android:maxLines="1"/>
-                </com.google.android.material.textfield.TextInputLayout>
-
+                    android:layout_marginStart="6dp"
+                    android:textColor="#34C759"
+                    android:textSize="12sp"
+                    android:fontFamily="sans-serif-medium"/>
             </LinearLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:text="ex: 48.8566 / 2.3522 pour Paris"
-                android:textColor="#2A2A2A"
-                android:textSize="11sp"/>
 
             <!-- ═══ PHOTOS (optionnel) ════════════════════════════════════ -->
             <TextView

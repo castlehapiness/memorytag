@@ -3273,6 +3273,8 @@ id contentPanel
 id contiguous
 id continuousVelocity
 id coordinator
+id coordsContainer
+id coordsText
 id cos
 id counterclockwise
 id cradle
@@ -3393,7 +3395,6 @@ id item_touch_helper_previous_elevation
 id jumpToEnd
 id jumpToStart
 id labeled
-id latitudeInput
 id layout
 id left
 id leftToRight
@@ -3410,7 +3411,6 @@ id loadingView
 id locationInput
 id locationRow
 id locationText
-id longitudeInput
 id m3_side_sheet
 id marquee
 id masked
