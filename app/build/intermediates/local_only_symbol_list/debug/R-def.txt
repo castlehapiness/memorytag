@@ -33,6 +33,7 @@ id createButton
 id createMemoryButton
 id createdIdContainer
 id createdIdText
+id dateInput
 id dateText
 id debugButton
 id descriptionInput
@@ -44,12 +45,14 @@ id globeLocationLabel
 id globeSection
 id globeView
 id idleGroup
+id latitudeInput
 id loadingGroup
 id loadingIndicator
 id loadingView
 id locationInput
 id locationRow
 id locationText
+id longitudeInput
 id nfcIconContainer
 id nfcStatusText
 id nfcWritePrompt
@@ -57,6 +60,7 @@ id nfcWriteStatus
 id photoImage
 id photoIndicator
 id photoPager
+id photosInput
 id ring1
 id ring2
 id ring3

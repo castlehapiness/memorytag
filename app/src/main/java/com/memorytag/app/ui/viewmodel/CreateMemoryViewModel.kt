@@ -11,15 +11,6 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import java.util.UUID
 
-/**
- * ViewModel dédié à la création d'un souvenir.
- *
- * Responsabilités :
- *  - Valider les champs saisis par l'utilisateur
- *  - Générer l'UUID unique
- *  - Appeler MemoryRepository.createMemory()
- *  - Exposer l'état de l'opération via StateFlow
- */
 class CreateMemoryViewModel : ViewModel() {
 
     private val repository = MemoryRepository()
@@ -28,15 +19,26 @@ class CreateMemoryViewModel : ViewModel() {
     val uiState: StateFlow<CreateMemoryUiState> = _uiState.asStateFlow()
 
     /**
-     * Point d'entrée principal : valide les champs et crée le souvenir.
+     * Crée un souvenir avec les champs obligatoires + optionnels.
      *
-     * @param title       Titre saisi (obligatoire)
-     * @param location    Lieu saisi (obligatoire)
-     * @param description Description optionnelle
+     * @param title       Obligatoire
+     * @param location    Obligatoire
+     * @param description Optionnel
+     * @param date        Optionnel  ex: "Juin 2024"
+     * @param latitude    Optionnel  ex: "48.8566"
+     * @param longitude   Optionnel  ex: "2.3522"
+     * @param photosRaw   Optionnel  URLs séparées par des virgules ou retours à la ligne
      */
-    fun createMemory(title: String, location: String, description: String) {
-
-        // ── Validation ───────────────────────────────────────────────────────
+    fun createMemory(
+        title: String,
+        location: String,
+        description: String = "",
+        date: String = "",
+        latitude: String = "",
+        longitude: String = "",
+        photosRaw: String = ""
+    ) {
+        // ── Validation des champs obligatoires ──────────────────────────────
         if (title.isBlank()) {
             _uiState.value = CreateMemoryUiState.Error("Le titre est obligatoire")
             return
@@ -50,27 +52,33 @@ class CreateMemoryViewModel : ViewModel() {
             _uiState.value = CreateMemoryUiState.Loading
 
             try {
-                // ── Génération de l'ID unique ─────────────────────────────────
-                // UUID v4 — format : "550e8400-e29b-41d4-a716-446655440000"
-                // Cet ID sera aussi à encoder sur le tag NFC
                 val id = UUID.randomUUID().toString()
 
-                // ── Construction de l'objet Memory ────────────────────────────
+                // ── Parse latitude / longitude ──────────────────────────────
+                val lat = latitude.trim().toDoubleOrNull() ?: 0.0
+                val lon = longitude.trim().toDoubleOrNull() ?: 0.0
+
+                // ── Parse photos : séparer par virgule ou newline ───────────
+                val photos = if (photosRaw.isBlank()) {
+                    emptyList()
+                } else {
+                    photosRaw.split(",", "\n")
+                        .map { it.trim() }
+                        .filter { it.isNotBlank() && (it.startsWith("http://") || it.startsWith("https://")) }
+                }
+
                 val memory = Memory(
                     id          = id,
                     title       = title.trim(),
                     location    = location.trim(),
                     description = description.trim(),
-                    latitude    = 0.0,          // À enrichir plus tard (GPS)
-                    longitude   = 0.0,
-                    date        = "",            // À enrichir plus tard
-                    photos      = emptyList()    // Upload photo = feature future
+                    date        = date.trim(),
+                    latitude    = lat,
+                    longitude   = lon,
+                    photos      = photos
                 )
 
-                // ── Écriture Firestore ────────────────────────────────────────
                 repository.createMemory(memory)
-
-                // Succès — retourne l'ID pour affichage dans l'UI
                 _uiState.value = CreateMemoryUiState.Success(id)
 
             } catch (e: Exception) {
@@ -81,7 +89,6 @@ class CreateMemoryViewModel : ViewModel() {
         }
     }
 
-    /** Remet l'état à Idle (ex: après snackbar succès) */
     fun resetState() {
         _uiState.value = CreateMemoryUiState.Idle
     }

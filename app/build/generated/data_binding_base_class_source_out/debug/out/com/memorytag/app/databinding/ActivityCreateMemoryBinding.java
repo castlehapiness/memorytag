@@ -41,10 +41,16 @@ public final class ActivityCreateMemoryBinding implements ViewBinding {
   public final TextView createdIdText;
 
   @NonNull
+  public final TextInputEditText dateInput;
+
+  @NonNull
   public final TextInputEditText descriptionInput;
 
   @NonNull
   public final LinearLayout formContainer;
+
+  @NonNull
+  public final TextInputEditText latitudeInput;
 
   @NonNull
   public final ProgressBar loadingIndicator;
@@ -53,10 +59,16 @@ public final class ActivityCreateMemoryBinding implements ViewBinding {
   public final TextInputEditText locationInput;
 
   @NonNull
+  public final TextInputEditText longitudeInput;
+
+  @NonNull
   public final TextView nfcWritePrompt;
 
   @NonNull
   public final TextView nfcWriteStatus;
+
+  @NonNull
+  public final TextInputEditText photosInput;
 
   @NonNull
   public final TextView screenSubtitle;
@@ -70,10 +82,12 @@ public final class ActivityCreateMemoryBinding implements ViewBinding {
   private ActivityCreateMemoryBinding(@NonNull NestedScrollView rootView,
       @NonNull ImageButton backButton, @NonNull FrameLayout buttonContainer,
       @NonNull MaterialButton createButton, @NonNull LinearLayout createdIdContainer,
-      @NonNull TextView createdIdText, @NonNull TextInputEditText descriptionInput,
-      @NonNull LinearLayout formContainer, @NonNull ProgressBar loadingIndicator,
-      @NonNull TextInputEditText locationInput, @NonNull TextView nfcWritePrompt,
-      @NonNull TextView nfcWriteStatus, @NonNull TextView screenSubtitle,
+      @NonNull TextView createdIdText, @NonNull TextInputEditText dateInput,
+      @NonNull TextInputEditText descriptionInput, @NonNull LinearLayout formContainer,
+      @NonNull TextInputEditText latitudeInput, @NonNull ProgressBar loadingIndicator,
+      @NonNull TextInputEditText locationInput, @NonNull TextInputEditText longitudeInput,
+      @NonNull TextView nfcWritePrompt, @NonNull TextView nfcWriteStatus,
+      @NonNull TextInputEditText photosInput, @NonNull TextView screenSubtitle,
       @NonNull TextView screenTitle, @NonNull TextInputEditText titleInput) {
     this.rootView = rootView;
     this.backButton = backButton;
@@ -81,12 +95,16 @@ public final class ActivityCreateMemoryBinding implements ViewBinding {
     this.createButton = createButton;
     this.createdIdContainer = createdIdContainer;
     this.createdIdText = createdIdText;
+    this.dateInput = dateInput;
     this.descriptionInput = descriptionInput;
     this.formContainer = formContainer;
+    this.latitudeInput = latitudeInput;
     this.loadingIndicator = loadingIndicator;
     this.locationInput = locationInput;
+    this.longitudeInput = longitudeInput;
     this.nfcWritePrompt = nfcWritePrompt;
     this.nfcWriteStatus = nfcWriteStatus;
+    this.photosInput = photosInput;
     this.screenSubtitle = screenSubtitle;
     this.screenTitle = screenTitle;
     this.titleInput = titleInput;
@@ -149,6 +167,12 @@ public final class ActivityCreateMemoryBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.dateInput;
+      TextInputEditText dateInput = ViewBindings.findChildViewById(rootView, id);
+      if (dateInput == null) {
+        break missingId;
+      }
+
       id = R.id.descriptionInput;
       TextInputEditText descriptionInput = ViewBindings.findChildViewById(rootView, id);
       if (descriptionInput == null) {
@@ -158,6 +182,12 @@ public final class ActivityCreateMemoryBinding implements ViewBinding {
       id = R.id.formContainer;
       LinearLayout formContainer = ViewBindings.findChildViewById(rootView, id);
       if (formContainer == null) {
+        break missingId;
+      }
+
+      id = R.id.latitudeInput;
+      TextInputEditText latitudeInput = ViewBindings.findChildViewById(rootView, id);
+      if (latitudeInput == null) {
         break missingId;
       }
 
@@ -173,6 +203,12 @@ public final class ActivityCreateMemoryBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.longitudeInput;
+      TextInputEditText longitudeInput = ViewBindings.findChildViewById(rootView, id);
+      if (longitudeInput == null) {
+        break missingId;
+      }
+
       id = R.id.nfcWritePrompt;
       TextView nfcWritePrompt = ViewBindings.findChildViewById(rootView, id);
       if (nfcWritePrompt == null) {
@@ -182,6 +218,12 @@ public final class ActivityCreateMemoryBinding implements ViewBinding {
       id = R.id.nfcWriteStatus;
       TextView nfcWriteStatus = ViewBindings.findChildViewById(rootView, id);
       if (nfcWriteStatus == null) {
+        break missingId;
+      }
+
+      id = R.id.photosInput;
+      TextInputEditText photosInput = ViewBindings.findChildViewById(rootView, id);
+      if (photosInput == null) {
         break missingId;
       }
 
@@ -204,9 +246,10 @@ public final class ActivityCreateMemoryBinding implements ViewBinding {
       }
 
       return new ActivityCreateMemoryBinding((NestedScrollView) rootView, backButton,
-          buttonContainer, createButton, createdIdContainer, createdIdText, descriptionInput,
-          formContainer, loadingIndicator, locationInput, nfcWritePrompt, nfcWriteStatus,
-          screenSubtitle, screenTitle, titleInput);
+          buttonContainer, createButton, createdIdContainer, createdIdText, dateInput,
+          descriptionInput, formContainer, latitudeInput, loadingIndicator, locationInput,
+          longitudeInput, nfcWritePrompt, nfcWriteStatus, photosInput, screenSubtitle, screenTitle,
+          titleInput);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

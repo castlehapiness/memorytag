@@ -3285,6 +3285,7 @@ id custom
 id customPanel
 id cut
 id dark
+id dateInput
 id dateText
 id date_picker_actions
 id debugButton
@@ -3392,6 +3393,7 @@ id item_touch_helper_previous_elevation
 id jumpToEnd
 id jumpToStart
 id labeled
+id latitudeInput
 id layout
 id left
 id leftToRight
@@ -3408,6 +3410,7 @@ id loadingView
 id locationInput
 id locationRow
 id locationText
+id longitudeInput
 id m3_side_sheet
 id marquee
 id masked
@@ -3524,6 +3527,7 @@ id percent
 id photoImage
 id photoIndicator
 id photoPager
+id photosInput
 id pin
 id position
 id postLayout
