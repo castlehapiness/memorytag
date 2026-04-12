@@ -1,126 +1,130 @@
 [
     {
-        "merged": "com.memorytag.app-merged_res-45:/drawable_ic_nfc.xml.flat",
-        "source": "com.memorytag.app-main-47:/drawable/ic_nfc.xml"
+        "merged": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-merged_res-45:/drawable_bg_indicator.xml.flat",
+        "source": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-main-47:/drawable/bg_indicator.xml"
     },
     {
-        "merged": "com.memorytag.app-merged_res-45:/drawable_border_selected_thumb.xml.flat",
-        "source": "com.memorytag.app-main-47:/drawable/border_selected_thumb.xml"
+        "merged": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-merged_res-45:/mipmap-hdpi_ic_launcher_round.xml.flat",
+        "source": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-main-47:/mipmap-hdpi/ic_launcher_round.xml"
     },
     {
-        "merged": "com.memorytag.app-merged_res-45:/layout_item_thumbnail.xml.flat",
-        "source": "com.memorytag.app-main-47:/layout/item_thumbnail.xml"
+        "merged": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-merged_res-45:/drawable_ripple_circle_mid.xml.flat",
+        "source": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-main-47:/drawable/ripple_circle_mid.xml"
     },
     {
-        "merged": "com.memorytag.app-merged_res-45:/mipmap-xhdpi_ic_launcher_round.xml.flat",
-        "source": "com.memorytag.app-main-47:/mipmap-xhdpi/ic_launcher_round.xml"
+        "merged": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-merged_res-45:/layout_activity_main.xml.flat",
+        "source": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-main-47:/layout/activity_main.xml"
     },
     {
         "merged": "com.memorytag.app-merged_res-45:/layout_activity_create_memory.xml.flat",
         "source": "com.memorytag.app-main-47:/layout/activity_create_memory.xml"
     },
     {
-        "merged": "com.memorytag.app-merged_res-45:/mipmap-hdpi_ic_launcher.xml.flat",
-        "source": "com.memorytag.app-main-47:/mipmap-hdpi/ic_launcher.xml"
+        "merged": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-merged_res-45:/transition_fade_enter.xml.flat",
+        "source": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-main-47:/transition/fade_enter.xml"
     },
     {
-        "merged": "com.memorytag.app-merged_res-45:/mipmap-xxxhdpi_ic_launcher.xml.flat",
-        "source": "com.memorytag.app-main-47:/mipmap-xxxhdpi/ic_launcher.xml"
+        "merged": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-merged_res-45:/drawable_ic_location_pin.xml.flat",
+        "source": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-main-47:/drawable/ic_location_pin.xml"
     },
     {
-        "merged": "com.memorytag.app-merged_res-45:/drawable_ring_pulse.xml.flat",
-        "source": "com.memorytag.app-main-47:/drawable/ring_pulse.xml"
+        "merged": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-merged_res-45:/layout_item_thumbnail.xml.flat",
+        "source": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-main-47:/layout/item_thumbnail.xml"
     },
     {
-        "merged": "com.memorytag.app-merged_res-45:/mipmap-xhdpi_ic_launcher.xml.flat",
-        "source": "com.memorytag.app-main-47:/mipmap-xhdpi/ic_launcher.xml"
+        "merged": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-merged_res-45:/mipmap-mdpi_ic_launcher_round.xml.flat",
+        "source": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-main-47:/mipmap-mdpi/ic_launcher_round.xml"
     },
     {
-        "merged": "com.memorytag.app-merged_res-45:/drawable_ripple_circle_outer.xml.flat",
-        "source": "com.memorytag.app-main-47:/drawable/ripple_circle_outer.xml"
+        "merged": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-merged_res-45:/drawable_gradient_photo_bottom.xml.flat",
+        "source": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-main-47:/drawable/gradient_photo_bottom.xml"
     },
     {
-        "merged": "com.memorytag.app-merged_res-45:/drawable_ic_launcher_fg.xml.flat",
-        "source": "com.memorytag.app-main-47:/drawable/ic_launcher_fg.xml"
+        "merged": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-merged_res-45:/mipmap-hdpi_ic_launcher.xml.flat",
+        "source": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-main-47:/mipmap-hdpi/ic_launcher.xml"
     },
     {
-        "merged": "com.memorytag.app-merged_res-45:/mipmap-xxxhdpi_ic_launcher_round.xml.flat",
-        "source": "com.memorytag.app-main-47:/mipmap-xxxhdpi/ic_launcher_round.xml"
+        "merged": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-merged_res-45:/layout_activity_memory_detail.xml.flat",
+        "source": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-main-47:/layout/activity_memory_detail.xml"
     },
     {
-        "merged": "com.memorytag.app-merged_res-45:/drawable_bg_button_back.xml.flat",
-        "source": "com.memorytag.app-main-47:/drawable/bg_button_back.xml"
+        "merged": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-merged_res-45:/mipmap-xxhdpi_ic_launcher.xml.flat",
+        "source": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-main-47:/mipmap-xxhdpi/ic_launcher.xml"
     },
     {
-        "merged": "com.memorytag.app-merged_res-45:/mipmap-xxhdpi_ic_launcher_round.xml.flat",
-        "source": "com.memorytag.app-main-47:/mipmap-xxhdpi/ic_launcher_round.xml"
+        "merged": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-merged_res-45:/drawable_bg_button_back.xml.flat",
+        "source": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-main-47:/drawable/bg_button_back.xml"
     },
     {
-        "merged": "com.memorytag.app-merged_res-45:/transition_fade_exit.xml.flat",
-        "source": "com.memorytag.app-main-47:/transition/fade_exit.xml"
+        "merged": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-merged_res-45:/drawable_ic_arrow_back.xml.flat",
+        "source": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-main-47:/drawable/ic_arrow_back.xml"
     },
     {
-        "merged": "com.memorytag.app-merged_res-45:/drawable_circle_white.xml.flat",
-        "source": "com.memorytag.app-main-47:/drawable/circle_white.xml"
+        "merged": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-merged_res-45:/mipmap-xxhdpi_ic_launcher_round.xml.flat",
+        "source": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-main-47:/mipmap-xxhdpi/ic_launcher_round.xml"
     },
     {
-        "merged": "com.memorytag.app-merged_res-45:/layout_activity_memory_detail.xml.flat",
-        "source": "com.memorytag.app-main-47:/layout/activity_memory_detail.xml"
+        "merged": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-merged_res-45:/mipmap-xhdpi_ic_launcher_round.xml.flat",
+        "source": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-main-47:/mipmap-xhdpi/ic_launcher_round.xml"
     },
     {
-        "merged": "com.memorytag.app-merged_res-45:/mipmap-hdpi_ic_launcher_round.xml.flat",
-        "source": "com.memorytag.app-main-47:/mipmap-hdpi/ic_launcher_round.xml"
+        "merged": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-merged_res-45:/drawable_ic_launcher_fg.xml.flat",
+        "source": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-main-47:/drawable/ic_launcher_fg.xml"
     },
     {
-        "merged": "com.memorytag.app-merged_res-45:/drawable_bg_id_card.xml.flat",
-        "source": "com.memorytag.app-main-47:/drawable/bg_id_card.xml"
+        "merged": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-merged_res-45:/drawable_ripple_circle_outer.xml.flat",
+        "source": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-main-47:/drawable/ripple_circle_outer.xml"
     },
     {
-        "merged": "com.memorytag.app-merged_res-45:/mipmap-xxhdpi_ic_launcher.xml.flat",
-        "source": "com.memorytag.app-main-47:/mipmap-xxhdpi/ic_launcher.xml"
+        "merged": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-merged_res-45:/mipmap-xxxhdpi_ic_launcher_round.xml.flat",
+        "source": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-main-47:/mipmap-xxxhdpi/ic_launcher_round.xml"
     },
     {
-        "merged": "com.memorytag.app-merged_res-45:/drawable_ic_location_pin.xml.flat",
-        "source": "com.memorytag.app-main-47:/drawable/ic_location_pin.xml"
+        "merged": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-merged_res-45:/drawable_indicator_dot_red.xml.flat",
+        "source": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-main-47:/drawable/indicator_dot_red.xml"
     },
     {
-        "merged": "com.memorytag.app-merged_res-45:/mipmap-mdpi_ic_launcher.xml.flat",
-        "source": "com.memorytag.app-main-47:/mipmap-mdpi/ic_launcher.xml"
+        "merged": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-merged_res-45:/layout_activity_create_memory.xml.flat",
+        "source": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-main-47:/layout/activity_create_memory.xml"
     },
     {
-        "merged": "com.memorytag.app-merged_res-45:/drawable_gradient_photo_bottom.xml.flat",
-        "source": "com.memorytag.app-main-47:/drawable/gradient_photo_bottom.xml"
+        "merged": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-merged_res-45:/drawable_circle_white.xml.flat",
+        "source": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-main-47:/drawable/circle_white.xml"
     },
     {
-        "merged": "com.memorytag.app-merged_res-45:/drawable_ripple_circle_mid.xml.flat",
-        "source": "com.memorytag.app-main-47:/drawable/ripple_circle_mid.xml"
+        "merged": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-merged_res-45:/mipmap-xxxhdpi_ic_launcher.xml.flat",
+        "source": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-main-47:/mipmap-xxxhdpi/ic_launcher.xml"
     },
     {
-        "merged": "com.memorytag.app-merged_res-45:/drawable_ic_arrow_back.xml.flat",
-        "source": "com.memorytag.app-main-47:/drawable/ic_arrow_back.xml"
+        "merged": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-merged_res-45:/mipmap-mdpi_ic_launcher.xml.flat",
+        "source": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-main-47:/mipmap-mdpi/ic_launcher.xml"
     },
     {
-        "merged": "com.memorytag.app-merged_res-45:/layout_activity_main.xml.flat",
-        "source": "com.memorytag.app-main-47:/layout/activity_main.xml"
+        "merged": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-merged_res-45:/drawable_bg_id_card.xml.flat",
+        "source": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-main-47:/drawable/bg_id_card.xml"
     },
     {
-        "merged": "com.memorytag.app-merged_res-45:/layout_item_photo_pager.xml.flat",
-        "source": "com.memorytag.app-main-47:/layout/item_photo_pager.xml"
+        "merged": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-merged_res-45:/layout_item_photo_pager.xml.flat",
+        "source": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-main-47:/layout/item_photo_pager.xml"
     },
     {
-        "merged": "com.memorytag.app-merged_res-45:/transition_fade_enter.xml.flat",
-        "source": "com.memorytag.app-main-47:/transition/fade_enter.xml"
+        "merged": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-merged_res-45:/drawable_ic_nfc.xml.flat",
+        "source": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-main-47:/drawable/ic_nfc.xml"
     },
     {
-        "merged": "com.memorytag.app-merged_res-45:/drawable_indicator_dot_red.xml.flat",
-        "source": "com.memorytag.app-main-47:/drawable/indicator_dot_red.xml"
+        "merged": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-merged_res-45:/drawable_ring_pulse.xml.flat",
+        "source": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-main-47:/drawable/ring_pulse.xml"
     },
     {
-        "merged": "com.memorytag.app-merged_res-45:/mipmap-mdpi_ic_launcher_round.xml.flat",
-        "source": "com.memorytag.app-main-47:/mipmap-mdpi/ic_launcher_round.xml"
+        "merged": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-merged_res-45:/transition_fade_exit.xml.flat",
+        "source": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-main-47:/transition/fade_exit.xml"
     },
     {
-        "merged": "com.memorytag.app-merged_res-45:/drawable_bg_indicator.xml.flat",
-        "source": "com.memorytag.app-main-47:/drawable/bg_indicator.xml"
+        "merged": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-merged_res-45:/drawable_border_selected_thumb.xml.flat",
+        "source": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-main-47:/drawable/border_selected_thumb.xml"
+    },
+    {
+        "merged": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-merged_res-45:/mipmap-xhdpi_ic_launcher.xml.flat",
+        "source": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-main-47:/mipmap-xhdpi/ic_launcher.xml"
     }
 ]

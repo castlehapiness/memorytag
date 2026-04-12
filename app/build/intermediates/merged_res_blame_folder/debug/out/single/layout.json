@@ -1,22 +1,26 @@
 [
     {
-        "merged": "com.memorytag.app-mergeDebugResources-44:/layout/activity_memory_detail.xml",
-        "source": "com.memorytag.app-main-47:/layout/activity_memory_detail.xml"
+        "merged": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-mergeDebugResources-44:/layout/activity_main.xml",
+        "source": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-main-47:/layout/activity_main.xml"
     },
     {
-        "merged": "com.memorytag.app-mergeDebugResources-44:/layout/activity_main.xml",
-        "source": "com.memorytag.app-main-47:/layout/activity_main.xml"
+        "merged": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-mergeDebugResources-44:/layout/activity_create_memory.xml",
+        "source": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-main-47:/layout/activity_create_memory.xml"
     },
     {
-        "merged": "com.memorytag.app-mergeDebugResources-44:/layout/item_photo_pager.xml",
-        "source": "com.memorytag.app-main-47:/layout/item_photo_pager.xml"
+        "merged": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-mergeDebugResources-44:/layout/item_photo_pager.xml",
+        "source": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-main-47:/layout/item_photo_pager.xml"
+    },
+    {
+        "merged": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-mergeDebugResources-44:/layout/activity_memory_detail.xml",
+        "source": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-main-47:/layout/activity_memory_detail.xml"
+    },
+    {
+        "merged": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-mergeDebugResources-44:/layout/item_thumbnail.xml",
+        "source": "/Users/dina/.gradle/daemon/8.2/com.memorytag.app-main-47:/layout/item_thumbnail.xml"
     },
     {
         "merged": "com.memorytag.app-mergeDebugResources-44:/layout/activity_create_memory.xml",
         "source": "com.memorytag.app-main-47:/layout/activity_create_memory.xml"
-    },
-    {
-        "merged": "com.memorytag.app-mergeDebugResources-44:/layout/item_thumbnail.xml",
-        "source": "com.memorytag.app-main-47:/layout/item_thumbnail.xml"
     }
 ]

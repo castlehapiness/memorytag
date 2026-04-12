@@ -52,6 +52,8 @@ id locationRow
 id locationText
 id nfcIconContainer
 id nfcStatusText
+id nfcWritePrompt
+id nfcWriteStatus
 id photoImage
 id photoIndicator
 id photoPager

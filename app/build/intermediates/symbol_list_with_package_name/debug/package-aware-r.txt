@@ -3480,6 +3480,8 @@ id neverCompleteToEnd
 id neverCompleteToStart
 id nfcIconContainer
 id nfcStatusText
+id nfcWritePrompt
+id nfcWriteStatus
 id noScroll
 id noState
 id none

@@ -53,6 +53,12 @@ public final class ActivityCreateMemoryBinding implements ViewBinding {
   public final TextInputEditText locationInput;
 
   @NonNull
+  public final TextView nfcWritePrompt;
+
+  @NonNull
+  public final TextView nfcWriteStatus;
+
+  @NonNull
   public final TextView screenSubtitle;
 
   @NonNull
@@ -66,7 +72,8 @@ public final class ActivityCreateMemoryBinding implements ViewBinding {
       @NonNull MaterialButton createButton, @NonNull LinearLayout createdIdContainer,
       @NonNull TextView createdIdText, @NonNull TextInputEditText descriptionInput,
       @NonNull LinearLayout formContainer, @NonNull ProgressBar loadingIndicator,
-      @NonNull TextInputEditText locationInput, @NonNull TextView screenSubtitle,
+      @NonNull TextInputEditText locationInput, @NonNull TextView nfcWritePrompt,
+      @NonNull TextView nfcWriteStatus, @NonNull TextView screenSubtitle,
       @NonNull TextView screenTitle, @NonNull TextInputEditText titleInput) {
     this.rootView = rootView;
     this.backButton = backButton;
@@ -78,6 +85,8 @@ public final class ActivityCreateMemoryBinding implements ViewBinding {
     this.formContainer = formContainer;
     this.loadingIndicator = loadingIndicator;
     this.locationInput = locationInput;
+    this.nfcWritePrompt = nfcWritePrompt;
+    this.nfcWriteStatus = nfcWriteStatus;
     this.screenSubtitle = screenSubtitle;
     this.screenTitle = screenTitle;
     this.titleInput = titleInput;
@@ -164,6 +173,18 @@ public final class ActivityCreateMemoryBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.nfcWritePrompt;
+      TextView nfcWritePrompt = ViewBindings.findChildViewById(rootView, id);
+      if (nfcWritePrompt == null) {
+        break missingId;
+      }
+
+      id = R.id.nfcWriteStatus;
+      TextView nfcWriteStatus = ViewBindings.findChildViewById(rootView, id);
+      if (nfcWriteStatus == null) {
+        break missingId;
+      }
+
       id = R.id.screenSubtitle;
       TextView screenSubtitle = ViewBindings.findChildViewById(rootView, id);
       if (screenSubtitle == null) {
@@ -184,7 +205,8 @@ public final class ActivityCreateMemoryBinding implements ViewBinding {
 
       return new ActivityCreateMemoryBinding((NestedScrollView) rootView, backButton,
           buttonContainer, createButton, createdIdContainer, createdIdText, descriptionInput,
-          formContainer, loadingIndicator, locationInput, screenSubtitle, screenTitle, titleInput);
+          formContainer, loadingIndicator, locationInput, nfcWritePrompt, nfcWriteStatus,
+          screenSubtitle, screenTitle, titleInput);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
